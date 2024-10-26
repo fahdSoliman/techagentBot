@@ -1,0 +1,259 @@
+{
+  "version": "0.0.1",
+  "catchAll": {
+    "onReceive": [],
+    "next": [
+      {
+        "condition": "event.nlu.intent.name === 'intent-cancel'",
+        "conditionType": "intent",
+        "node": "END"
+      }
+    ]
+  },
+  "startNode": "Slot-domain",
+  "description": "",
+  "nodes": [
+    {
+      "id": "d06333e812",
+      "name": "node-domain-check",
+      "next": [
+        {
+          "condition": "temp.bool == true",
+          "conditionType": "raw",
+          "node": "choice-activation"
+        },
+        {
+          "condition": "temp.bool == false",
+          "conditionType": "raw",
+          "node": "choice-another-domain"
+        },
+        {
+          "condition": "temp.err == true",
+          "conditionType": "raw",
+          "node": "error.flow.json"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-ccJi-X",
+        "domain_check_API {\"domain\":\"{{session.slots.domain.value}}\"}"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "e79c68b7cb",
+      "name": "node-no",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "Slot-domain"
+        }
+      ],
+      "onEnter": [
+        "basic-skills/slot_reset {\"slotName\":\"domain\"}"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "skill-72b12d",
+      "type": "skill-call",
+      "skill": "choice",
+      "name": "choice-activation",
+      "flow": "skills/choice-72b12d.flow.json",
+      "next": [
+        {
+          "caption": "User picked [0]",
+          "condition": "temp['skill-choice-ret-stca3or6d9'] == \"0\"",
+          "node": "node-res-without-activation"
+        },
+        {
+          "caption": "User picked [1]",
+          "condition": "temp['skill-choice-ret-stca3or6d9'] == \"1\"",
+          "node": "node-res-with-activation"
+        },
+        {
+          "caption": "On failure",
+          "condition": "true",
+          "node": "error.flow.json"
+        }
+      ],
+      "onEnter": null,
+      "onReceive": null
+    },
+    {
+      "id": "a4364e0c64",
+      "name": "node-res-without-activation",
+      "next": [
+        {
+          "condition": "true",
+          "node": "node-dns1-name"
+        }
+      ],
+      "onEnter": [
+        "builtin/setVariable {\"type\":\"temp\",\"name\":\"activate\",\"value\":\"False\"}"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "5a2743cf59",
+      "name": "node-dns1-name",
+      "next": [
+        {
+          "condition": "true",
+          "node": "node-dns2-name"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-lo-sqA"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"temp\",\"name\":\"dns1\",\"value\":\"{{event.payload.text}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "c183f73ecc",
+      "name": "node-company-name",
+      "next": [
+        {
+          "condition": "true",
+          "node": "node-call-api"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-fWF8rA"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"temp\",\"name\":\"company\",\"value\":\"{{event.payload.text}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "4c8395eec3",
+      "name": "node-res-with-activation",
+      "next": [
+        {
+          "condition": "true",
+          "node": "node-dns1-name"
+        }
+      ],
+      "onEnter": [
+        "builtin/setVariable {\"type\":\"temp\",\"name\":\"activate\",\"value\":\"True\"}"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "18f7fef346",
+      "name": "node-dns2-name",
+      "next": [
+        {
+          "condition": "true",
+          "node": "node-company-name"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-FPAWCk"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"temp\",\"name\":\"dns2\",\"value\":\"{{event.payload.text}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "skill-a11ea6",
+      "type": "skill-call",
+      "skill": "choice",
+      "name": "choice-another-domain",
+      "flow": "skills/choice-a11ea6.flow.json",
+      "next": [
+        {
+          "caption": "User picked [0]",
+          "condition": "temp['skill-choice-ret-p7y3takvys'] == \"0\"",
+          "node": "node-yes"
+        },
+        {
+          "caption": "User picked [1]",
+          "condition": "temp['skill-choice-ret-p7y3takvys'] == \"1\"",
+          "node": "node-no"
+        },
+        {
+          "caption": "On failure",
+          "condition": "true",
+          "conditionType": "always",
+          "node": "node-yes"
+        }
+      ],
+      "onEnter": null,
+      "onReceive": null
+    },
+    {
+      "id": "56afce270c",
+      "name": "node-yes",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "END"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-qTwqMn",
+        "basic-skills/slot_reset {\"slotName\":\"domain\"}",
+        "basic-skills/slot_reset {\"slotName\":\"product\"}",
+        "basic-skills/slot_reset {\"slotName\":\"hosting_package\"}"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "skill-04c3ec",
+      "type": "skill-call",
+      "skill": "Slot",
+      "name": "Slot-domain",
+      "flow": "skills/Slot-04c3ec.flow.json",
+      "next": [
+        {
+          "caption": "On extracted",
+          "condition": "temp.extracted == \"true\"",
+          "node": "node-domain-check"
+        },
+        {
+          "caption": "On not found",
+          "condition": "temp.notExtracted == \"true\"",
+          "node": "node-yes"
+        },
+        {
+          "caption": "On already extracted",
+          "condition": "temp.alreadyExtracted == \"true\"",
+          "node": "node-domain-check"
+        }
+      ],
+      "onEnter": null,
+      "onReceive": null
+    },
+    {
+      "id": "d33984f052",
+      "name": "node-call-api",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "END"
+        }
+      ],
+      "onEnter": [
+        "test {}",
+        "ResDomain_create_API {}",
+        "basic-skills/slot_reset {\"slotName\":\"domain\"}",
+        "basic-skills/slot_reset {\"slotName\":\"product\"}",
+        "basic-skills/slot_reset {\"slotName\":\"hosting_package\"}"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    }
+  ]
+}

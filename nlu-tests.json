@@ -1,0 +1,104 @@
+[
+  {
+    "id": "1616093908490",
+    "utterance": "ما هي اسعار تسجيل عنوان نطاق",
+    "context": "*",
+    "conditions": [
+      [
+        "context",
+        "is",
+        "domain"
+      ],
+      [
+        "intent",
+        "is",
+        "__qna__lgja7nvn74_"
+      ]
+    ]
+  },
+  {
+    "id": "1616093945449",
+    "utterance": "شو أسعار النطاقات ",
+    "context": "domain",
+    "conditions": [
+      [
+        "context",
+        "is",
+        "domain"
+      ],
+      [
+        "intent",
+        "is",
+        "__qna__lgja7nvn74_"
+      ]
+    ]
+  },
+  {
+    "id": "1616121553969",
+    "utterance": "هل يمكنك مساعدتي",
+    "context": "global",
+    "conditions": [
+      [
+        "context",
+        "is",
+        "none"
+      ],
+      [
+        "intent",
+        "is",
+        "intent-ask-realagent"
+      ]
+    ]
+  },
+  {
+    "id": "1616121566879",
+    "utterance": "هل يمكنك مساعدتي",
+    "context": "global",
+    "conditions": [
+      [
+        "context",
+        "is",
+        "none"
+      ],
+      [
+        "intent",
+        "is",
+        "intent-ask-realagent"
+      ]
+    ]
+  },
+  {
+    "id": "1616121593852",
+    "utterance": "هل يمكنك مساعدتي",
+    "context": "*",
+    "conditions": [
+      [
+        "context",
+        "is",
+        "global"
+      ],
+      [
+        "intent",
+        "is",
+        "intent-ask-realagent"
+      ]
+    ]
+  },
+  {
+    "id": "1616127019288",
+    "utterance": "شو أسعار النطاقات ",
+    "context": "domain",
+    "conditions": [
+      [
+        "context",
+        "is",
+        "domain"
+      ],
+      [
+        "intent",
+        "is",
+        "__qna__lgja7nvn74_"
+      ]
+    ]
+  }
+]

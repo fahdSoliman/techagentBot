@@ -1,0 +1,58 @@
+{
+  "id": "city",
+  "name": "city",
+  "type": "list",
+  "occurrences": [
+    {
+      "name": "دمشق",
+      "synonyms": [
+        "شام",
+        "الشام"
+      ]
+    },
+    {
+      "name": "اللاذقية",
+      "synonyms": []
+    },
+    {
+      "name": "طرطوس",
+      "synonyms": []
+    },
+    {
+      "name": "حماه",
+      "synonyms": []
+    },
+    {
+      "name": "حمص",
+      "synonyms": []
+    },
+    {
+      "name": "درعا",
+      "synonyms": []
+    },
+    {
+      "name": "السويداء",
+      "synonyms": []
+    },
+    {
+      "name": "الحسكة",
+      "synonyms": []
+    },
+    {
+      "name": "حلب",
+      "synonyms": []
+    },
+    {
+      "name": "القامشلي",
+      "synonyms": []
+    },
+    {
+      "name": "ريف دمشق",
+      "synonyms": []
+    }
+  ],
+  "sensitive": false,
+  "fuzzy": 0.8,
+  "examples": [],
+  "pattern": ""
+}

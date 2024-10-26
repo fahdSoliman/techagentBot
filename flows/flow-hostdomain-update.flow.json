@@ -1,0 +1,165 @@
+{
+  "version": "0.0.1",
+  "catchAll": {},
+  "startNode": "Slot-fields",
+  "description": "",
+  "nodes": [
+    {
+      "id": "b9b7a6c397",
+      "name": "node-api",
+      "onEnter": [
+        "test {}",
+        "hostdomain_update_API {}",
+        "basic-skills/slot_reset {\"slotName\":\"domain\"}",
+        "basic-skills/slot_reset {\"slotName\":\"product\"}",
+        "basic-skills/slot_reset {\"slotName\":\"fields\"}"
+      ],
+      "onReceive": null,
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "END"
+        }
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "skill-122205",
+      "type": "skill-call",
+      "skill": "Slot",
+      "name": "Slot-fields",
+      "flow": "skills/Slot-122205.flow.json",
+      "next": [
+        {
+          "caption": "On extracted",
+          "condition": "temp.extracted == \"true\"",
+          "node": "node-check"
+        },
+        {
+          "caption": "On not found",
+          "condition": "temp.notExtracted  == \"true\"",
+          "conditionType": "props",
+          "node": "flow-ask-agent.flow.json"
+        },
+        {
+          "caption": "On already extracted",
+          "condition": "temp.alreadyExtracted == \"true\"",
+          "node": "node-check"
+        }
+      ],
+      "onEnter": null,
+      "onReceive": null
+    },
+    {
+      "id": "ed045d1ff5",
+      "name": "node-backage-update",
+      "next": [
+        {
+          "condition": "true",
+          "node": "Slot-fields"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-kVvvDm",
+        "basic-skills/slot_reset {\"slotName\":\"fields\"}"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "b9939a52e1",
+      "name": "node-catch-field",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "choice-update-more"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-sGDqNj"
+      ],
+      "onReceive": [
+        "hostdomain_fields_toUpdate {\"value\":\"{{event.preview}}\",\"jump\":\"node-exist\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "skill-93e01b",
+      "type": "skill-call",
+      "skill": "choice",
+      "name": "choice-update-more",
+      "flow": "skills/choice-93e01b.flow.json",
+      "next": [
+        {
+          "caption": "User picked [0]",
+          "condition": "temp['skill-choice-ret-qh3pi8l6ch'] == \"0\"",
+          "node": "node-api"
+        },
+        {
+          "caption": "User picked [1]",
+          "condition": "temp['skill-choice-ret-qh3pi8l6ch'] == \"1\"",
+          "node": "node-reset"
+        },
+        {
+          "caption": "On failure",
+          "condition": "true",
+          "conditionType": "always",
+          "node": "END"
+        }
+      ],
+      "onEnter": null,
+      "onReceive": null
+    },
+    {
+      "id": "4e924ad5dd",
+      "name": "node-reset",
+      "next": [
+        {
+          "condition": "true",
+          "node": "Slot-fields"
+        }
+      ],
+      "onEnter": [
+        "basic-skills/slot_reset {\"slotName\":\"fields\"}"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "af0aeb4adf",
+      "name": "node-check",
+      "next": [
+        {
+          "condition": "session.slots.fields.value === 'باقة'",
+          "conditionType": "raw",
+          "node": "node-backage-update"
+        },
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "node-catch-field"
+        }
+      ],
+      "onEnter": [],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "1dab3dfc75",
+      "name": "node-exist",
+      "next": [
+        {
+          "condition": "true",
+          "node": "node-reset"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-hoPv7x"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    }
+  ]
+}

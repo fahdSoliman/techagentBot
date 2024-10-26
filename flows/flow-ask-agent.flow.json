@@ -1,0 +1,98 @@
+{
+  "version": "0.0.1",
+  "catchAll": {
+    "onReceive": [],
+    "next": []
+  },
+  "startNode": "entry",
+  "description": "",
+  "nodes": [
+    {
+      "id": "a1b39a0d70",
+      "name": "entry",
+      "onEnter": [],
+      "onReceive": null,
+      "next": [
+        {
+          "condition": "true",
+          "node": "HitlNext-real-agent"
+        }
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "skill-efe3dc",
+      "type": "skill-call",
+      "skill": "HitlNext",
+      "name": "HitlNext-real-agent",
+      "flow": "skills/HitlNext-efe3dc.flow.json",
+      "next": [
+        {
+          "caption": "Handoff Resolved",
+          "condition": "temp['hitlnext-handoffResolved'] === true",
+          "node": "node-resolved"
+        },
+        {
+          "caption": "No Agent Available",
+          "condition": "temp['hitlnext-noAgent'] === true",
+          "node": "node-no-agent"
+        },
+        {
+          "caption": "Timed Out Waiting Agent",
+          "condition": "temp['hitlnext-timedOutWaitingAgent'] === true",
+          "node": "node-time-out"
+        }
+      ],
+      "onEnter": null,
+      "onReceive": null
+    },
+    {
+      "id": "9c869d9c34",
+      "name": "node-time-out",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "END"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-ITnj8T"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "de832a2f09",
+      "name": "node-no-agent",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "END"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-zkh6pv"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "12b591be0c",
+      "name": "node-resolved",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "END"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-Wqxr-E"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    }
+  ]
+}

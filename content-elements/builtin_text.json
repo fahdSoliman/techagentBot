@@ -1,0 +1,1186 @@
+[
+  {
+    "id": "builtin_text-Rl_PpZ",
+    "formData": {
+      "markdown$ar": true,
+      "typing$ar": true,
+      "variations$ar": [
+        "أهلاً وسهلاً {{event.state.user.fullName}}،😊"
+      ],
+      "text$ar": "مرحبا بك عزيزي {{event.state.user.fullName}} 😊"
+    },
+    "createdBy": "admin",
+    "createdOn": "2021-01-08T22:37:03.155Z",
+    "modifiedOn": "2023-12-06T08:21:15.861Z"
+  },
+  {
+    "id": "builtin_text-iRLkNV",
+    "formData": {
+      "markdown$ar": true,
+      "typing$ar": true,
+      "text$ar": "تفضّل، يمكنك سؤالي بما تريد؟",
+      "variations$ar": [
+        "كيف أستطيع مساعدتك؟"
+      ]
+    },
+    "createdBy": "admin",
+    "createdOn": "2021-01-08T22:42:54.729Z",
+    "modifiedOn": "2021-03-10T20:14:06.089Z"
+  },
+  {
+    "id": "builtin_text-ccJi-X",
+    "formData": {
+      "markdown$ar": true,
+      "typing$ar": true,
+      "text$ar": "سأقوم بالتأكد من توفر هذا النطاق لك أولاً",
+      "variations$ar": [
+        "سنتأكد إذا كان هذا النطاق متوفراً في البداية"
+      ]
+    },
+    "createdBy": "admin",
+    "createdOn": "2021-01-08T22:48:42.675Z",
+    "modifiedOn": "2023-09-26T08:36:41.664Z"
+  },
+  {
+    "id": "builtin_text-KqigMI",
+    "formData": {
+      "markdown$ar": true,
+      "typing$ar": true,
+      "text$ar": "الحمد لله، تفضل، يمكنك سؤال ما تريد",
+      "variations$ar": [
+        "شكراً لك، أنا بخير، تفضل بالسؤال"
+      ]
+    },
+    "createdBy": "admin",
+    "createdOn": "2021-01-08T22:59:02.050Z",
+    "modifiedOn": "2021-01-17T18:30:42.613Z"
+  },
+  {
+    "id": "builtin_text-SiyQ_A",
+    "formData": {
+      "markdown$ar": true,
+      "typing$ar": true,
+      "text$ar": "عذراً ليس باستطاعتي حالياً فهم ما تريد !\nولكن سأتأكد من حصولي على اجابة لسؤالك في المرات القادمة.",
+      "variations$ar": [
+        "أعتذر، ليس لدي ما اجيبك به حالياً !\nلكن المطورين يقومون بعملهم لجعلي أجيب على هذه الاسئلة لاحقاً"
+      ]
+    },
+    "createdBy": "admin",
+    "createdOn": "2021-01-09T01:25:48.838Z",
+    "modifiedOn": "2023-12-01T13:44:47.483Z"
+  },
+  {
+    "id": "builtin_text-26VgdN",
+    "formData": {
+      "markdown$ar": true,
+      "typing$ar": true,
+      "text$ar": "أسألني، ماذا ترغب أن تستفسر عنه؟ ",
+      "variations$ar": [
+        "إسأل وانا سأجيب بالتأكيد، بما لدي من معلومات.",
+        "أنتظر سؤالك الآن، لأقدم لك الاجابة."
+      ]
+    },
+    "createdBy": "admin",
+    "createdOn": "2021-01-17T18:42:36.228Z",
+    "modifiedOn": "2023-05-01T09:46:26.415Z"
+  },
+  {
+    "id": "builtin_text-n1hVGp",
+    "formData": {
+      "markdown$ar": true,
+      "typing$ar": true,
+      "text$ar": "{{event.type}}"
+    },
+    "createdBy": "admin",
+    "createdOn": "2021-01-19T20:22:12.976Z",
+    "modifiedOn": "2021-01-19T20:22:12.976Z"
+  },
+  {
+    "id": "builtin_text-GSIyNb",
+    "formData": {
+      "markdown$ar": true,
+      "typing$ar": true,
+      "text$ar": "إن الموقع {{temp.domain.domain}} هو {{temp.domain.status}}"
+    },
+    "createdBy": "admin",
+    "createdOn": "2021-01-23T00:02:22.751Z",
+    "modifiedOn": "2023-09-26T23:43:32.703Z"
+  },
+  {
+    "id": "builtin_text--UHGfw",
+    "formData": {
+      "markdown$ar": true,
+      "typing$ar": true,
+      "text$ar": "حسناً سنعود للبداية ، كيف يمكن مساعدتك؟"
+    },
+    "createdBy": "admin",
+    "createdOn": "2021-01-23T14:52:25.633Z",
+    "modifiedOn": "2021-03-18T07:52:25.542Z"
+  },
+  {
+    "id": "builtin_text-1lMN85",
+    "formData": {
+      "markdown$ar": true,
+      "typing$ar": true,
+      "text$ar": "ما هو عنوان الدومين الذي ترغب بحجزه؟"
+    },
+    "createdBy": "admin",
+    "createdOn": "2021-02-02T17:29:51.817Z",
+    "modifiedOn": "2021-02-02T17:29:51.817Z"
+  },
+  {
+    "id": "builtin_text-Dm0KAy",
+    "formData": {
+      "markdown$ar": true,
+      "typing$ar": true,
+      "text$ar": "جرب أن تضع الدومين بالصيغة www.example.com"
+    },
+    "createdBy": "admin",
+    "createdOn": "2021-02-02T17:30:50.384Z",
+    "modifiedOn": "2021-02-02T17:30:50.384Z"
+  },
+  {
+    "id": "builtin_text-ZUU0QH",
+    "formData": {
+      "markdown$ar": true,
+      "typing$ar": true,
+      "text$ar": "اجرائية حجز نطاق دومين "
+    },
+    "createdBy": "admin",
+    "createdOn": "2021-02-03T15:31:08.140Z",
+    "modifiedOn": "2021-02-03T15:31:08.140Z"
+  },
+  {
+    "id": "builtin_text-Kp1mPF",
+    "formData": {
+      "markdown$ar": true,
+      "typing$ar": true,
+      "text$ar": "إنتظر قليلاً، سيتكلم معك موظف خدمة العملاء في مدة أقصاها عشر دقائق"
+    },
+    "createdBy": "admin",
+    "createdOn": "2021-02-05T00:35:53.438Z",
+    "modifiedOn": "2021-03-06T18:12:25.627Z"
+  },
+  {
+    "id": "builtin_text-xtqEME",
+    "formData": {
+      "markdown$ar": true,
+      "typing$ar": true,
+      "text$ar": "انا المساعد الرقمي😊 سأحاول ما بإستطاعتي لمساعدتك 😍",
+      "variations$ar": [
+        "معك المساعد الرقمي، سأكون متواجد معك لمساعدتك بما أستطيع",
+        ""
+      ]
+    },
+    "createdBy": "admin",
+    "createdOn": "2021-03-11T09:39:28.068Z",
+    "modifiedOn": "2023-04-30T18:06:51.449Z"
+  },
+  {
+    "id": "builtin_text-Zl9Vte",
+    "formData": {
+      "markdown$ar": true,
+      "typing$ar": true,
+      "text$ar": "يبدو أن هناك مشكلة لديّ، سأحاول التحسن في الوقت القريب، يمكنك تجريب شيء أخر",
+      "variations$ar": [
+        "لقد حص سوء فهم منّي، سأحاول أن أطور من قدراتي في الايام القادمة، يمكن أن تجرب شيء أخر مثلا استضافة مواقع الويب"
+      ]
+    },
+    "createdBy": "admin",
+    "createdOn": "2021-03-14T03:57:55.769Z",
+    "modifiedOn": "2024-01-02T19:30:55.199Z"
+  },
+  {
+    "id": "builtin_text-465lIq",
+    "formData": {
+      "markdown$ar": true,
+      "typing$ar": true,
+      "text$ar": "هل ترغب بمعرفة أي شيء عن النطاق، يمكنك سؤالي الآن اذا كنت تريد ذلك"
+    },
+    "createdBy": "admin",
+    "createdOn": "2021-03-14T23:10:45.643Z",
+    "modifiedOn": "2021-03-14T23:10:45.643Z"
+  },
+  {
+    "id": "builtin_text-qTwqMn",
+    "formData": {
+      "markdown$ar": true,
+      "typing$ar": true,
+      "text$ar": "حسناً، لنتكلم في شيء أخر، كيف يمكنني مساعدتك"
+    },
+    "createdBy": "admin",
+    "createdOn": "2021-03-18T07:45:46.537Z",
+    "modifiedOn": "2021-03-18T07:45:46.537Z"
+  },
+  {
+    "id": "builtin_text-jpasn9",
+    "formData": {
+      "markdown$ar": true,
+      "typing$ar": true,
+      "text$ar": "حسناً، ألغينا المضوع، يمكنك سؤالي مجددا",
+      "variations$ar": [
+        "أوكي، تفضل بالسؤال مرة أخرى"
+      ]
+    },
+    "createdBy": "admin",
+    "createdOn": "2021-03-18T23:43:38.831Z",
+    "modifiedOn": "2021-03-18T23:43:38.831Z"
+  },
+  {
+    "id": "builtin_text-fjfvRB",
+    "formData": {
+      "markdown$ar": true,
+      "typing$ar": true,
+      "text$ar": "تفضل"
+    },
+    "createdBy": "admin",
+    "createdOn": "2021-03-19T00:17:01.556Z",
+    "modifiedOn": "2021-03-19T00:17:01.556Z"
+  },
+  {
+    "id": "builtin_text-8BImK4",
+    "formData": {
+      "text$ar": "يبدو انك تكلمني من حساب تيليغرام",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2022-07-15T21:56:44.549Z",
+    "modifiedOn": "2022-07-15T21:56:44.549Z"
+  },
+  {
+    "id": "builtin_text-viQwJ4",
+    "formData": {
+      "text$ar": "المستخدم معرف {{event.state.user.data.username}}",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2022-07-21T20:27:16.581Z",
+    "modifiedOn": "2022-12-15T22:14:01.653Z"
+  },
+  {
+    "id": "builtin_text-RTBuiC",
+    "formData": {
+      "text$ar": "الحساب غير معرف",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2022-07-21T20:39:52.317Z",
+    "modifiedOn": "2022-07-21T20:39:52.317Z"
+  },
+  {
+    "id": "builtin_text-TlAtvw",
+    "formData": {
+      "text$ar": "الحساب معرف",
+      "markdown$ar": true,
+      "typing$ar": true,
+      "variations$ar": [
+        ""
+      ]
+    },
+    "createdBy": "admin",
+    "createdOn": "2022-07-21T20:40:09.675Z",
+    "modifiedOn": "2022-07-21T20:40:09.675Z"
+  },
+  {
+    "id": "builtin_text-sJ15Xp",
+    "formData": {
+      "text$ar": "مرحباً بك عزيزي",
+      "markdown$ar": true,
+      "typing$ar": true,
+      "variations$ar": [
+        "أهلا وسهلاً بك !"
+      ]
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-04-30T18:09:10.930Z",
+    "modifiedOn": "2023-09-21T19:44:04.929Z"
+  },
+  {
+    "id": "builtin_text-_6QPe5",
+    "formData": {
+      "text$ar": "خدمات الاستضافة المشتركة",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-05-03T21:53:04.855Z",
+    "modifiedOn": "2023-05-03T21:53:04.855Z"
+  },
+  {
+    "id": "builtin_text-6hL6MD",
+    "formData": {
+      "text$ar": "خدمات النطاق",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-05-03T21:53:32.107Z",
+    "modifiedOn": "2023-05-03T21:53:32.107Z"
+  },
+  {
+    "id": "builtin_text-wWW3gP",
+    "formData": {
+      "text$ar": "اسعارنا بالنسبة الى {{event.nlu.slots.product.value}} على الشكل التالي:",
+      "markdown$ar": false,
+      "typing$ar": true,
+      "variations$ar": [
+        "هذه هي الاسعار لـ {{event.nlu.slots.product.value}} كما أنت طلبت:"
+      ]
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-05-04T14:55:41.915Z",
+    "modifiedOn": "2023-09-21T01:11:14.673Z"
+  },
+  {
+    "id": "builtin_text-a7LvY6",
+    "formData": {
+      "text$ar": "خدمة الاستضافة المشتركة (بالإنجليزية: Shared web hosting service) هي ان يستضيف خادم ويب مجموعة من مواقع الإنترنت بحيث تشترك هذه المواقع بموارد الخادم من أجل تقليل تكلفة استضافة هذه المواقع على شبكة الانترنت وقد يحتوي السيرفر الواحد المخصص للاستضافة المشتركة على عدة مواقع تترواح من بضعة مواقع وقد تصل إلى آلاف المواقع وهذا يعتمد على مواصفات خادم الوب وطبيعة المواقع المطلوب استضافتها.\nخدمة الاستضافة المشتركة هي خدمة جيدة لإستضافة مواقع الانترنت التي تم تصميمها بأحدى أطر العمل التالية:\n* php laravel\n* python django\n* node js\n* NET. framework\nنحن نوفر عدة باقات تلبي جميع المتطلبات الممكنة لاستضافة موقع ويب على الانترنت.",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-05-05T09:14:08.137Z",
+    "modifiedOn": "2023-05-13T19:52:08.172Z"
+  },
+  {
+    "id": "builtin_text-eH0KZD",
+    "formData": {
+      "text$ar": "خدمة استضافة النطاق هي خدمة متاحة لجميع المشتركين. نقوم بتقديمها بشكل مأجور مقابل رسوم سنوية، حيث تشير الخدمة الى عملية ربط عنوان النطاق بعنوان IP حقيقي ثابت يتيح لمستخدمي الانترنت بالوصول الى الموقع من خلال عنوان النطاق.",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-05-06T17:14:57.790Z",
+    "modifiedOn": "2023-05-06T17:14:57.790Z"
+  },
+  {
+    "id": "builtin_text-rx86PE",
+    "formData": {
+      "text$ar": "نقدم مجموعة من الخدمات على شبكة الانترنت لتخدم معظم الاحتياجات وهي:\n- حجز عنوان نطاق.\n- استضافة عنوان نطاق\n- استضافة مشتركة تدعم عدة اطر عمل ولغات برمجية مختلفة\n- استضافة مستقلة افتراضية VPS ",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-05-06T20:37:22.890Z",
+    "modifiedOn": "2023-05-06T20:38:33.506Z"
+  },
+  {
+    "id": "builtin_text-jEgCiF",
+    "formData": {
+      "text$ar": "نقدم خدمات حجز النطاق للمشتركين لدينا وهي على الشكل التالي:\n",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-05-06T20:53:34.686Z",
+    "modifiedOn": "2023-05-06T20:53:34.686Z"
+  },
+  {
+    "id": "builtin_text-w8x2zb",
+    "formData": {
+      "text$ar": "ما هو المنتج الذي ترغب بمعرفة سعره؟",
+      "markdown$ar": true,
+      "typing$ar": true,
+      "variations$ar": [
+        "ما هي نوع الخدمة التي تريد معرفة سعرها؟"
+      ]
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-05-08T18:19:54.687Z",
+    "modifiedOn": "2023-05-08T18:19:54.687Z"
+  },
+  {
+    "id": "builtin_text-P53sdz",
+    "formData": {
+      "text$ar": "{{event.nlu.slots.product.entity.data.value}}",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-05-09T21:27:14.267Z",
+    "modifiedOn": "2023-05-09T21:27:14.267Z"
+  },
+  {
+    "id": "builtin_text-gvHYsG",
+    "formData": {
+      "text$ar": "يرجى كتابة عنوان نطاق صحيح، مثلاً: \n - www.example.sy",
+      "markdown$ar": true,
+      "typing$ar": true,
+      "variations$ar": [
+        "لأستطيح حجز نطاق لك يجب عليك تزويدي بالنطاق الذي ترغب بحجزه.\nمثلاً:  www.example.sy"
+      ]
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-05-12T18:35:15.359Z",
+    "modifiedOn": "2023-05-12T18:46:24.940Z"
+  },
+  {
+    "id": "builtin_text-eEFxQJ",
+    "formData": {
+      "text$ar": "الخادوم الظاهري الخاص أو الخادم الافتراضي الخاص (بالإنجليزية: Virtual Private Server)‏ أو أحيانا (بالإنجليزية: Virtual Personal Server)‏ ويرمز له بـ VPS أو هو مصطلح يستخدم من قبل خدمات استضافة الإنترنت للإشارة إلى جهاز افتراضي. حيث يقومون باستخدام برامج محددة إلى تقسيم الجهاز الرئيسي الواحد (النود) إلى عدة أجهزة افتراضية تعمل في بيئة تخيلية ولكل منها نظامها الخاص الذي يعمل في معزل عن بقية الأجهزة الافتراضية وعن الجهاز الرئيسي، وكل منها لديه خصوصية العمل كحاسوب فعلي منفصل (يمكن تشغيله وإعادة تشغيله وإيقافه والبرامج التي يشغلها)، وهو في كثير من النواحي ما يعادل وظيفية حاسوب حقيقي منفصل، وتكرس هذه الخوادم الافتراضية لاحتياجات العملاء الفردية، ويمكن إعداده لتشغيل برامج الخادم.\nنقدم خدمة حجز استضافة مستقلة افتراضية للمشتركين على موقعنا وذلك ضمن مجموعة من الباقات الخاصة وهي:\n- باقة الاعمال\n- الباقة الاحترافية\n- الباقة الذهبية",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-05-13T19:47:34.870Z",
+    "modifiedOn": "2023-05-13T19:50:24.989Z"
+  },
+  {
+    "id": "builtin_text-ypt-ds",
+    "formData": {
+      "text$ar": "نقدم خدمة حجز استضافة مستقلة افتراضية للمشتركين على موقعنا وذلك ضمن مجموعة من الباقات الخاصة وهي:\n- باقة الاعمال\n- الباقة الاحترافية\n- الباقة الذهبية",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-05-13T19:49:36.999Z",
+    "modifiedOn": "2023-05-13T19:49:36.999Z"
+  },
+  {
+    "id": "builtin_text-s05jVO",
+    "formData": {
+      "text$ar": "استضافة مستقلة - عام",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-05-15T21:24:48.264Z",
+    "modifiedOn": "2023-05-15T21:24:48.264Z"
+  },
+  {
+    "id": "builtin_text-_b-lIC",
+    "formData": {
+      "text$ar": "مرحباً بك على قناة تليغرام",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-05-15T21:25:23.578Z",
+    "modifiedOn": "2024-03-08T14:43:45.346Z"
+  },
+  {
+    "id": "builtin_text-Z36VVw",
+    "formData": {
+      "text$ar": "يرجى استكمال حسابك أولاً حتى تتمكن من حجز الخدمة",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-05-17T21:28:39.414Z",
+    "modifiedOn": "2023-05-17T21:28:39.414Z"
+  },
+  {
+    "id": "builtin_text-PoUIPi",
+    "formData": {
+      "text$ar": "يجب استكمال حسابك لتتمكن من الاشتراك بالخدمات",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-05-18T19:02:10.487Z",
+    "modifiedOn": "2023-12-04T21:23:56.203Z"
+  },
+  {
+    "id": "builtin_text-w_uG25",
+    "formData": {
+      "text$ar": "يمكنك دائما تحديث ملفك الشخصي على الموقع من خلال الرابط التالي:\n\nhttp://localhost:8000/account/settings/",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-05-19T18:11:40.125Z",
+    "modifiedOn": "2024-03-24T21:55:44.571Z"
+  },
+  {
+    "id": "builtin_text-yH69YK",
+    "formData": {
+      "text$ar": "سأبدأ بطرح الاسئلة عليك ومن ثم سأقوم بتحديث بيانات الحساب الخاص بك.\nسيكون طرح الاسئلة على الشكل التالي:\n- معلومات الشركة.\n- معلومات المدير الفني.\n- معلومات المدير المالي.\nثم بعد ذلك معلومات الملف الشخصي ونكون قد أتممنا بيانات الحساب.",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-05-19T18:43:37.799Z",
+    "modifiedOn": "2023-12-04T10:37:50.694Z"
+  },
+  {
+    "id": "builtin_text-fWF8rA",
+    "formData": {
+      "text$ar": "ما هو اسم الشركة؟",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-05-19T18:44:41.836Z",
+    "modifiedOn": "2023-05-19T18:44:41.836Z"
+  },
+  {
+    "id": "builtin_text-FfWpyL",
+    "formData": {
+      "text$ar": "البيانات المخزنة هي {{temp.company_name}}",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-05-19T18:52:21.216Z",
+    "modifiedOn": "2023-05-19T18:53:21.068Z"
+  },
+  {
+    "id": "builtin_text-0oG0Ce",
+    "formData": {
+      "text$ar": "الغاء العملية، سنعود للبداية",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-05-20T09:39:57.583Z",
+    "modifiedOn": "2023-05-20T09:39:57.583Z"
+  },
+  {
+    "id": "builtin_text-r0BAZj",
+    "formData": {
+      "text$ar": "الخيار هو {{temp.skill-choice-ret-company_type}}",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-05-20T10:01:21.054Z",
+    "modifiedOn": "2023-05-20T10:01:21.054Z"
+  },
+  {
+    "id": "builtin_text-Xatu4m",
+    "formData": {
+      "text$ar": "ما هو عنوان الايميل للشركة؟",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-05-20T10:15:54.865Z",
+    "modifiedOn": "2023-05-20T10:15:54.865Z"
+  },
+  {
+    "id": "builtin_text-GGi_f4",
+    "formData": {
+      "text$ar": "ما هو رقم الهاتف الخاص بالشركة",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-05-20T10:18:52.473Z",
+    "modifiedOn": "2023-05-20T10:18:52.473Z"
+  },
+  {
+    "id": "builtin_text-rrE9UC",
+    "formData": {
+      "text$ar": "ما هي المدينة التي توجد بها الشركة؟",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-05-20T10:20:05.941Z",
+    "modifiedOn": "2023-05-20T10:20:05.941Z"
+  },
+  {
+    "id": "builtin_text-mQJkKH",
+    "formData": {
+      "text$ar": "القيمة المدخلة {{temp.company_email}}",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-05-20T10:52:20.543Z",
+    "modifiedOn": "2023-05-20T10:52:20.543Z"
+  },
+  {
+    "id": "builtin_text-eXZfFz",
+    "formData": {
+      "text$ar": "قمت بتعليم سؤالك هذا ليقوم الفريق التقني بتطويري لاحقاً\nلأستطيع الرد عليه في المرات القادمة.",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-09-22T23:30:55.015Z",
+    "modifiedOn": "2023-09-22T23:30:55.015Z"
+  },
+  {
+    "id": "builtin_text-NQ_Dze",
+    "formData": {
+      "text$ar": "**استخدامي كمساعد تقني:**\n\n - أنا استطيع تمييز النوايا (بما تم تدريبي عليه) التي تقوم بطرحها لي من خلال الرسائل\n - إذا كنت تملك حساب على الموقع فإنني استطيع معرفة مجموعة من البيانات الخاصة بك مثل حالة الاشتراكات التي لديك أو حالة حسابك على الموقع\n - كما أيضا يمكنني تزويدك بالمعلومات اللازمة عن الخدمات التي نقدمها على الموقع \n",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-09-23T20:28:10.449Z",
+    "modifiedOn": "2023-12-07T23:30:55.023Z"
+  },
+  {
+    "id": "builtin_text-1ER0Iw",
+    "formData": {
+      "text$ar": "بكل الاحوال يمكنك طرح السؤال بشكل عفوي وسأقوم بتحليل النيّة وإعطائك الاجابة\nوإذا كانت الاجابة غير مرضية يمكنك التصويت بالسلبية على الجواب هذا سيساعدني على التطور أكثر فأكثر.",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-09-23T20:30:58.252Z",
+    "modifiedOn": "2023-09-23T20:30:58.252Z"
+  },
+  {
+    "id": "builtin_text-pKJ-jk",
+    "formData": {
+      "text$ar": "هذا النطاق محجوز، هل ترغب بالمحاولة مجدداً بعنوان نطاق أخر.",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-09-26T14:56:36.096Z",
+    "modifiedOn": "2023-09-29T17:36:08.674Z"
+  },
+  {
+    "id": "builtin_text-PlIBJH",
+    "formData": {
+      "text$ar": "هل تريد حجز النطاق مع خيار التفعيل؟",
+      "markdown$ar": true,
+      "typing$ar": true,
+      "variations$ar": [
+        "هل تريد تفعيل خيار التفعيل مع الحجز؟"
+      ]
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-09-27T00:02:44.786Z",
+    "modifiedOn": "2023-09-27T00:02:44.786Z"
+  },
+  {
+    "id": "builtin_text-lo-sqA",
+    "formData": {
+      "text$ar": "ما هو عنوان مخدم الاسماء الأولي المستضيف",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-09-27T00:12:24.583Z",
+    "modifiedOn": "2023-09-27T00:23:35.528Z"
+  },
+  {
+    "id": "builtin_text-FPAWCk",
+    "formData": {
+      "text$ar": "ما هو عنوان مخدم الاسماء الثانوي",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-09-27T00:25:09.940Z",
+    "modifiedOn": "2023-09-27T00:25:09.940Z"
+  },
+  {
+    "id": "builtin_text-Oyj6ZW",
+    "formData": {
+      "text$ar": "حاول مرة اخرى",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-10-06T08:30:40.055Z",
+    "modifiedOn": "2023-10-06T08:30:40.055Z"
+  },
+  {
+    "id": "builtin_text-CXgkN1",
+    "formData": {
+      "text$ar": "ما هو المنتج الذي ترغب بمعرفة معلومات عنه",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-11-09T14:23:52.639Z",
+    "modifiedOn": "2023-11-09T14:23:52.639Z"
+  },
+  {
+    "id": "builtin_text-alZEmq",
+    "formData": {
+      "text$ar": "يرجى اختيار خدمة معينة\nمثلاً: \n- حجز نطاق\n- استضافة نطاق\n- استضافة مشتركة\n- استضافة مستقلة",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-11-09T14:25:21.701Z",
+    "modifiedOn": "2023-11-14T11:00:44.854Z"
+  },
+  {
+    "id": "builtin_text-vqo_kY",
+    "formData": {
+      "text$ar": "ما هي الباقة",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-11-09T14:26:05.972Z",
+    "modifiedOn": "2023-11-09T14:26:05.972Z"
+  },
+  {
+    "id": "builtin_text-cy4rSJ",
+    "formData": {
+      "text$ar": "ما هو المنتج الذي ترغب بالاشتراك به",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-11-14T10:59:22.414Z",
+    "modifiedOn": "2023-11-14T10:59:22.414Z"
+  },
+  {
+    "id": "builtin_text-ITnj8T",
+    "formData": {
+      "text$ar": "أعتذر منك عن هذا التقصير!",
+      "markdown$ar": true,
+      "typing$ar": true,
+      "variations$ar": [
+        "سامحني يبدو أن موظفي الدعم مشغولون حالياً"
+      ]
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-11-18T20:28:37.539Z",
+    "modifiedOn": "2023-11-18T20:28:37.539Z"
+  },
+  {
+    "id": "builtin_text-zkh6pv",
+    "formData": {
+      "text$ar": "عذراً.. لا يوجد حالياً موظفين ",
+      "markdown$ar": true,
+      "typing$ar": true,
+      "variations$ar": [
+        "أعتذر منك لانه حالياً لا يوجد موظفين"
+      ]
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-11-18T20:30:27.411Z",
+    "modifiedOn": "2023-11-18T20:30:27.411Z"
+  },
+  {
+    "id": "builtin_text-Wqxr-E",
+    "formData": {
+      "text$ar": "سعيد جداً بمساعدتك، وسأفعل ذلك دائماً",
+      "markdown$ar": true,
+      "typing$ar": true,
+      "variations$ar": [
+        "حسناً، أرجو ان اكون قد قدمت لك الفائدة، ستجدني دائما معك!"
+      ]
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-11-18T20:33:06.214Z",
+    "modifiedOn": "2023-11-18T20:33:06.214Z"
+  },
+  {
+    "id": "builtin_text-tXsl8x",
+    "formData": {
+      "text$ar": "ما هي المعلومات التي تريد معرفتها، معلومات عن الخدمات؟، أو ترغب بالاشتراك في خدمة ما؟\nسأرسل لك قائمة اختر خيارً منها لتعرف المزيد.",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-11-18T20:44:42.061Z",
+    "modifiedOn": "2023-12-06T20:19:48.784Z"
+  },
+  {
+    "id": "builtin_text-awqZEe",
+    "formData": {
+      "text$ar": "يبدو أنني أسأت فهم رسالتك هذه !",
+      "markdown$ar": true,
+      "typing$ar": true,
+      "variations$ar": [
+        "إعذرني لقد اسأت فهمك !"
+      ]
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-11-29T10:57:01.942Z",
+    "modifiedOn": "2023-12-01T13:45:17.699Z"
+  },
+  {
+    "id": "builtin_text-k7TMxP",
+    "formData": {
+      "text$ar": "سأبحث لك عن بعض الاجوبة في قاعدة المعرفة",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-12-01T20:42:00.357Z",
+    "modifiedOn": "2023-12-01T20:42:00.357Z"
+  },
+  {
+    "id": "builtin_text-yKG9WX",
+    "formData": {
+      "text$ar": "إليك بعض المساعدة",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-12-01T20:42:20.500Z",
+    "modifiedOn": "2023-12-01T20:42:20.500Z"
+  },
+  {
+    "id": "builtin_text-P2SkTI",
+    "formData": {
+      "text$ar": "عذراً لا يوجد لدينا هكذا خدمة !",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-12-02T00:00:03.389Z",
+    "modifiedOn": "2023-12-02T00:00:03.389Z"
+  },
+  {
+    "id": "builtin_text-Pmf5P4",
+    "formData": {
+      "text$ar": "إليك بعض المساعدة",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-12-02T00:01:17.196Z",
+    "modifiedOn": "2023-12-02T00:01:17.196Z"
+  },
+  {
+    "id": "builtin_text-W55Yfj",
+    "formData": {
+      "text$ar": "ما هو اسم المسؤول الفني لديكم؟",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-12-04T20:19:56.336Z",
+    "modifiedOn": "2023-12-04T20:19:56.336Z"
+  },
+  {
+    "id": "builtin_text-X5_TBX",
+    "formData": {
+      "text$ar": "ما هو رقم الهاتف للمسؤول الفني؟",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-12-04T20:22:30.173Z",
+    "modifiedOn": "2023-12-04T20:22:30.173Z"
+  },
+  {
+    "id": "builtin_text-TRwUZL",
+    "formData": {
+      "text$ar": "ما هو بريد المسؤول الفني؟",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-12-04T20:23:01.660Z",
+    "modifiedOn": "2023-12-04T20:23:01.660Z"
+  },
+  {
+    "id": "builtin_text-Oe9OVx",
+    "formData": {
+      "text$ar": "ما هو اسم المسؤول المالي لديكم؟",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-12-04T20:41:50.148Z",
+    "modifiedOn": "2023-12-04T20:41:50.148Z"
+  },
+  {
+    "id": "builtin_text-X2qfNY",
+    "formData": {
+      "text$ar": "ما هو رقم هاتف المسؤول المالي؟",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-12-04T20:54:47.129Z",
+    "modifiedOn": "2023-12-04T20:54:47.129Z"
+  },
+  {
+    "id": "builtin_text-ptZL_d",
+    "formData": {
+      "text$ar": "يجب أن تكون مسجلاً دخول على حسابك الشخصي على الموقع لأتمكن من مساعدتك في حجز الخدمة لك!",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-12-06T21:33:33.131Z",
+    "modifiedOn": "2023-12-06T21:33:33.131Z"
+  },
+  {
+    "id": "builtin_text-3WXcc4",
+    "formData": {
+      "text$ar": "ما هو ايميل المسؤول المالي لديكم؟",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-12-08T11:31:05.884Z",
+    "modifiedOn": "2023-12-08T11:31:05.884Z"
+  },
+  {
+    "id": "builtin_text-qD_sko",
+    "formData": {
+      "text$ar": "لو تسألني بطريقة مختلفة قليلأ لربما استطيع فهم سؤالك اكثر",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-01-02T15:46:58.358Z",
+    "modifiedOn": "2024-01-02T15:57:18.475Z"
+  },
+  {
+    "id": "builtin_text-3b7KDC",
+    "formData": {
+      "text$ar": "انت تحدثني من خلال الموقع ولكن بصفة زائر حالياً\nإذا كان لديك حساب على الموقع فيجب تسجيل الدخول حتى استطيع ان اتعامل معك كزبون والقيام بامور مثل الاشتراك بخدمة وعمليات اخرى",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-03-22T21:41:02.993Z",
+    "modifiedOn": "2024-03-22T21:41:02.993Z"
+  },
+  {
+    "id": "builtin_text-fOJfKD",
+    "formData": {
+      "text$ar": "يجب ان يكون لديك حساب على الموقع وقد تم تحديد حساب تيليغرام ضمن الملف الشخصي للحساب حتى استطيع معاملتك كزبون عبر قناة التواصل هذه.",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-03-22T21:59:29.150Z",
+    "modifiedOn": "2024-03-22T21:59:29.150Z"
+  },
+  {
+    "id": "builtin_text-z806dC",
+    "formData": {
+      "text$ar": "ان كان بالفعل لديك حساب على الموقع فإنه يمكنني مساعدتك لربط حساب تيلغرام به",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-03-22T22:00:40.975Z",
+    "modifiedOn": "2024-03-22T22:00:40.975Z"
+  },
+  {
+    "id": "builtin_text-qikldH",
+    "formData": {
+      "text$ar": "يمكنك تسجيل حساب على الرابط\nhttp://localhost:8000/account/register/",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-03-22T22:39:52.828Z",
+    "modifiedOn": "2024-03-22T22:39:58.480Z"
+  },
+  {
+    "id": "builtin_text-2XvFTu",
+    "formData": {
+      "text$ar": "ادخل اسم المستخدم",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-03-22T23:35:08.851Z",
+    "modifiedOn": "2024-03-22T23:35:08.851Z"
+  },
+  {
+    "id": "builtin_text-J5o2-P",
+    "formData": {
+      "text$ar": "ادخل كلمة السر",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-03-22T23:42:15.507Z",
+    "modifiedOn": "2024-03-22T23:42:15.507Z"
+  },
+  {
+    "id": "builtin_text-Jfw6S0",
+    "formData": {
+      "text$ar": "الآن يمكنني التعامل معك كزبون وأستطيع طبعا القيام بالعديد من الامور\nيمكنك البدء بما تريد",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-03-23T21:15:00.983Z",
+    "modifiedOn": "2024-03-23T21:15:00.983Z"
+  },
+  {
+    "id": "builtin_text-5wwogf",
+    "formData": {
+      "text$ar": "عذراً عزيزي يبدو بيانات الدخول غير صحيحة ولكن يمكنني المساعدة بما استطيع ضمن حدود معينة ",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-03-23T21:15:56.800Z",
+    "modifiedOn": "2024-03-23T21:15:56.800Z"
+  },
+  {
+    "id": "builtin_text-FL6MwL",
+    "formData": {
+      "text$ar": "ما هو المنتج الذي مشترك به انت؟",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-05-12T23:02:02.617Z",
+    "modifiedOn": "2024-05-12T23:02:02.617Z"
+  },
+  {
+    "id": "builtin_text-AttKIc",
+    "formData": {
+      "text$ar": "ما هو عنوان النطاق أو اسم الموقع الذي ترغب بتعديله\nيرجى كتابته على الشكل: www.example.sy",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-05-13T08:22:51.860Z",
+    "modifiedOn": "2024-05-14T11:10:14.814Z"
+  },
+  {
+    "id": "builtin_text-SZa0ZQ",
+    "formData": {
+      "text$ar": "يرجى كتابة اسم النطاق او عنوان الموقع بشكل صحيح\nكمثال: www.example.sy",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-05-13T08:23:14.434Z",
+    "modifiedOn": "2024-05-14T11:10:31.463Z"
+  },
+  {
+    "id": "builtin_text-HnbzL4",
+    "formData": {
+      "text$ar": "على اي حال\nاي من هذه الاشتراكات ترغب بتعديلها؟",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-05-16T08:44:05.072Z",
+    "modifiedOn": "2024-05-17T12:25:36.589Z"
+  },
+  {
+    "id": "builtin_text-MU_XEy",
+    "formData": {
+      "text$ar": "ما هو الشيء الذي تريد تغييره بسجل الخدمة الذي مشترك به؟",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-05-17T18:45:46.103Z",
+    "modifiedOn": "2024-05-17T18:45:46.103Z"
+  },
+  {
+    "id": "builtin_text-vb0PZj",
+    "formData": {
+      "text$ar": "يمكنك تغيير: \n* عنوان النطاق\n* عنوان الشبكة IP",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-05-17T18:46:58.177Z",
+    "modifiedOn": "2024-05-17T18:46:58.177Z"
+  },
+  {
+    "id": "builtin_text-5v3rqW",
+    "formData": {
+      "text$ar": "قمنا بتحديث الخدمة بنجاح",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-05-17T22:40:20.447Z",
+    "modifiedOn": "2024-05-17T22:40:20.447Z"
+  },
+  {
+    "id": "builtin_text-kVvvDm",
+    "formData": {
+      "text$ar": "لا يوجد سوى باقة واحدة لخدمة استضافة النطاق",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-05-18T01:18:38.931Z",
+    "modifiedOn": "2024-05-18T01:18:38.931Z"
+  },
+  {
+    "id": "builtin_text-sGDqNj",
+    "formData": {
+      "text$ar": "ما هي قيمة التعديل لـ {{session.slots.fields.value}}؟",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-05-18T01:28:38.433Z",
+    "modifiedOn": "2024-05-18T01:29:49.299Z"
+  },
+  {
+    "id": "builtin_text-hoPv7x",
+    "formData": {
+      "text$ar": "قد قمت بتعديل هذه القيمة سابقاً",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-05-19T18:22:30.109Z",
+    "modifiedOn": "2024-05-19T18:22:30.109Z"
+  },
+  {
+    "id": "builtin_text-VxDVBm",
+    "formData": {
+      "text$ar": "ما هو عنوان شبكة الانترنت لاستضافة النطاق؟",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-05-20T22:36:41.608Z",
+    "modifiedOn": "2024-05-20T22:36:41.608Z"
+  },
+  {
+    "id": "builtin_text-qWFCvv",
+    "formData": {
+      "text$ar": "هل ترغب بالحصول على مساعدة خدمة العملاء لتنفيذ الأمر؟",
+      "markdown$ar": true,
+      "typing$ar": true,
+      "variations$ar": [
+        "ما رأيك بأن أوصلك بأحد موظفي الدعم المتوفرين لمعالجة طلبك؟"
+      ]
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-05-20T22:38:54.752Z",
+    "modifiedOn": "2024-05-20T22:39:21.713Z"
+  },
+  {
+    "id": "builtin_text-379hvR",
+    "formData": {
+      "text$ar": "ما هو النطاق الذي ترغب بإستضافته ؟\nيرجى كتابته على الشكل www.example.sy",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-05-22T23:27:04.760Z",
+    "modifiedOn": "2024-05-22T23:27:23.580Z"
+  },
+  {
+    "id": "builtin_text-cNNW9i",
+    "formData": {
+      "text$ar": "حسابك مكتمل يمكنك الاشتراك بالخدمات إن كنت تريد ذلك.",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-05-22T23:45:24.064Z",
+    "modifiedOn": "2024-05-22T23:45:24.064Z"
+  },
+  {
+    "id": "builtin_text-Nx0GSL",
+    "formData": {
+      "text$ar": "تغيير الباقة بحاجة الى اجراءات متعددة ",
+      "markdown$ar": true,
+      "typing$ar": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-06-03T09:26:45.602Z",
+    "modifiedOn": "2024-06-03T09:26:45.602Z"
+  }
+]

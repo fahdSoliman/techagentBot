@@ -1,0 +1,141 @@
+{
+  "steps": [
+    {
+      "userMessage": "شو أسعار الاستضافة عندكم",
+      "botReplies": [
+        {
+          "botResponse": "#!builtin_text-Rl_PpZ",
+          "replySource": "dialogManager"
+        },
+        {
+          "botResponse": "#!builtin_text-CXgkN1",
+          "replySource": "dialogManager"
+        }
+      ]
+    },
+    {
+      "userMessage": "استضافة مشتركة",
+      "botReplies": [
+        {
+          "botResponse": "#!builtin_text-vqo_kY",
+          "replySource": "dialogManager"
+        }
+      ]
+    },
+    {
+      "userMessage": "باقة توفيرية",
+      "botReplies": [
+        {
+          "botResponse": "#!builtin_single-choice-eThpfC",
+          "replySource": "dialogManager"
+        }
+      ]
+    }
+  ],
+  "initialState": {
+    "__stacktrace": [],
+    "user": {
+      "timezone": 3,
+      "language": "en"
+    },
+    "context": {},
+    "session": {
+      "workflows": {}
+    },
+    "temp": {}
+  },
+  "finalState": {
+    "__stacktrace": [
+      {
+        "flow": "flow-product-info.flow.json",
+        "node": "Slot-package"
+      },
+      {
+        "flow": "flow-product-info.flow.json",
+        "node": "choice-32d80a"
+      }
+    ],
+    "user": {
+      "timezone": 3,
+      "language": "en"
+    },
+    "context": {
+      "currentFlow": "skills/choice-32d80a.flow.json",
+      "currentNode": "parse",
+      "previousFlow": "flow-product-info.flow.json",
+      "previousNode": "choice-32d80a"
+    },
+    "session": {
+      "workflows": {},
+      "slots": {
+        "notFound": 0,
+        "product": {
+          "confidence": 0.9932321887475918,
+          "start": 0,
+          "end": 14,
+          "entity": {
+            "name": "product",
+            "type": "custom.list.product",
+            "meta": {
+              "confidence": 1,
+              "start": 0,
+              "end": 14,
+              "sensitive": false,
+              "source": "استضافة مشتركة"
+            },
+            "data": {
+              "unit": "",
+              "value": "استضافة مشتركة"
+            }
+          },
+          "name": "product",
+          "source": "استضافة مشتركة",
+          "value": "استضافة مشتركة",
+          "timestamp": 1717405032276,
+          "turns": 1,
+          "overwritable": true,
+          "expiresAfterTurns": false
+        },
+        "hosting_package": {
+          "name": "hosting_package",
+          "value": "باقة التوفير",
+          "entity": {
+            "name": "hosting_package",
+            "type": "custom.list.hosting_package",
+            "meta": {
+              "confidence": 1,
+              "start": 0,
+              "end": 12,
+              "sensitive": false,
+              "source": "باقة توفيرية"
+            },
+            "data": {
+              "unit": "",
+              "value": "باقة التوفير"
+            }
+          },
+          "timestamp": 1717405037211,
+          "turns": 0,
+          "overwritable": true
+        }
+      },
+      "isGreet": "true",
+      "nluContexts": [
+        {
+          "context": "global",
+          "ttl": 999
+        }
+      ]
+    },
+    "temp": {
+      "is_qa_answered": false,
+      "tryFillSlotCount": 1,
+      "extracted": "true",
+      "notExtracted": false,
+      "alreadyExtracted": false,
+      "skill-choice-invalid-count-htyyqvkws7": 0,
+      "skill-choice-valid-htyyqvkws7": null,
+      "skill-choice-ret-htyyqvkws7": null
+    }
+  }
+}

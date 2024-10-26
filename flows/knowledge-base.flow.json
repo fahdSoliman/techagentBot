@@ -1,0 +1,69 @@
+{
+  "version": "0.0.1",
+  "catchAll": {},
+  "startNode": "entry",
+  "description": "",
+  "nodes": [
+    {
+      "id": "53545a4bab",
+      "name": "entry",
+      "onEnter": [],
+      "onReceive": null,
+      "next": [
+        {
+          "condition": "session.qa_score > 5",
+          "conditionType": "raw",
+          "node": "END"
+        },
+        {
+          "condition": "true",
+          "node": "choice-rate-QA"
+        }
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "skill-5bf9fd",
+      "type": "skill-call",
+      "skill": "choice",
+      "name": "choice-rate-QA",
+      "flow": "skills/choice-5bf9fd.flow.json",
+      "next": [
+        {
+          "caption": "User picked [1]",
+          "condition": "temp['skill-choice-ret-user_rate'] == \"1\"",
+          "node": "node-rate-QA-api"
+        },
+        {
+          "caption": "User picked [-1]",
+          "condition": "temp['skill-choice-ret-user_rate'] == \"-1\"",
+          "node": "node-rate-QA-api"
+        },
+        {
+          "caption": "On failure",
+          "condition": "true",
+          "conditionType": "always",
+          "node": "END"
+        }
+      ],
+      "onEnter": null,
+      "onReceive": null
+    },
+    {
+      "id": "d0949cd0ed",
+      "name": "node-rate-QA-api",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "END"
+        }
+      ],
+      "onEnter": [
+        "QA_LFQA_Rate_API {}"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    }
+  ]
+}

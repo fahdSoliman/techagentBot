@@ -1,0 +1,65 @@
+{
+  "steps": [
+    {
+      "userMessage": "مرحبا",
+      "botReplies": [
+        {
+          "botResponse": "#!builtin_text-Rl_PpZ",
+          "replySource": "dialogManager"
+        },
+        {
+          "botResponse": "#!builtin_text-tXsl8x",
+          "replySource": "dialogManager"
+        },
+        {
+          "botResponse": "#!builtin_single-choice-bYaha8",
+          "replySource": "dialogManager"
+        }
+      ]
+    },
+    {
+      "userMessage": "خروج",
+      "botReplies": [
+        {
+          "botResponse": "#!builtin_text-Wqxr-E",
+          "replySource": "dialogManager"
+        }
+      ]
+    }
+  ],
+  "initialState": {
+    "__stacktrace": [],
+    "user": {
+      "timezone": 3,
+      "language": "en"
+    },
+    "context": {},
+    "session": {
+      "workflows": {}
+    },
+    "temp": {}
+  },
+  "finalState": {
+    "__stacktrace": [
+      {
+        "flow": "flow-chatbot-help.flow.json",
+        "node": "choice-main-menu"
+      },
+      {
+        "flow": "flow-chatbot-help.flow.json",
+        "node": "node-end"
+      }
+    ],
+    "user": {
+      "timezone": 3,
+      "language": "en"
+    },
+    "context": {},
+    "session": {
+      "workflows": {},
+      "slots": {},
+      "isGreet": "true"
+    },
+    "temp": {}
+  }
+}

@@ -1,0 +1,197 @@
+{
+  "version": "0.0.1",
+  "catchAll": {
+    "onReceive": [],
+    "next": [
+      {
+        "condition": "event.nlu.intent.name === 'intent-cancel'",
+        "conditionType": "intent",
+        "node": "flow-end.flow.json"
+      }
+    ]
+  },
+  "startNode": "node-check",
+  "description": "",
+  "nodes": [
+    {
+      "id": "skill-e4a3c9",
+      "type": "skill-call",
+      "skill": "Slot",
+      "name": "Slot-product",
+      "flow": "skills/Slot-e4a3c9.flow.json",
+      "next": [
+        {
+          "caption": "On extracted",
+          "condition": "temp.extracted == \"true\"",
+          "node": "Slot-package"
+        },
+        {
+          "caption": "On not found",
+          "condition": "temp.notExtracted == \"true\"",
+          "node": "node-not-found"
+        },
+        {
+          "caption": "On already extracted",
+          "condition": "temp.alreadyExtracted == \"true\"",
+          "node": "Slot-package"
+        }
+      ],
+      "onEnter": null,
+      "onReceive": null
+    },
+    {
+      "id": "skill-47f4ce",
+      "type": "skill-call",
+      "skill": "Slot",
+      "name": "Slot-package",
+      "flow": "skills/Slot-47f4ce.flow.json",
+      "next": [
+        {
+          "caption": "On extracted",
+          "condition": "temp.extracted == \"true\"",
+          "node": "node-check-product"
+        },
+        {
+          "caption": "On not found",
+          "condition": "temp.notExtracted == \"true\"",
+          "node": "node-not-found"
+        },
+        {
+          "caption": "On already extracted",
+          "condition": "temp.alreadyExtracted == \"true\"",
+          "node": "node-check-product"
+        }
+      ],
+      "onEnter": null,
+      "onReceive": null
+    },
+    {
+      "id": "0aec794435",
+      "name": "node-not-found",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "END"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text--UHGfw"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "23022ca620",
+      "name": "node-profile-complete",
+      "next": [
+        {
+          "condition": "session.is_complete",
+          "conditionType": "raw",
+          "node": "node-transfer-to"
+        },
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "flow-customer-update.flow.json"
+        }
+      ],
+      "onEnter": [
+        "test {}"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "329a1e9a92",
+      "name": "node-check-product",
+      "next": [
+        {
+          "condition": "temp.product_exist",
+          "conditionType": "raw",
+          "node": "node-profile-complete"
+        },
+        {
+          "condition": "temp.error",
+          "conditionType": "raw",
+          "node": "END"
+        },
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "node-no-product"
+        }
+      ],
+      "onEnter": [
+        "product_check_API {\"product_type\":\"{{event.state.session.slots.product.value}}\",\"product_package\":\"{{event.state.session.slots.hosting_package.value}}\"}"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "7cbe23f7bd",
+      "name": "node-no-product",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "flow-chatbot-help.flow.json"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-P2SkTI",
+        "say #!builtin_text-Pmf5P4"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "be31498d94",
+      "name": "node-check",
+      "next": [
+        {
+          "condition": "user.userid !== undefined",
+          "conditionType": "raw",
+          "node": "Slot-product"
+        },
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "flow-customer-authentication.flow.json"
+        }
+      ],
+      "onEnter": [],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "00630c0f86",
+      "name": "node-transfer-to",
+      "onEnter": [],
+      "onReceive": null,
+      "next": [
+        {
+          "condition": "session.slots.product.value === 'حجز نطاق'",
+          "conditionType": "raw",
+          "node": "flow-resdomain-reservation.flow.json"
+        },
+        {
+          "condition": "session.slots.product.value === 'استضافة نطاق'",
+          "conditionType": "raw",
+          "node": "flow-hostdomain-reservation.flow.json"
+        },
+        {
+          "condition": "session.slots.product.value === 'استضافة مشتركة'",
+          "conditionType": "raw",
+          "node": "flow-shared-reservation.flow.json"
+        },
+        {
+          "condition": "session.slots.product.value === 'استضافة مستقلة افتراضية'",
+          "conditionType": "raw",
+          "node": "flow-vps-reservation.flow.json"
+        }
+      ],
+      "type": "standard"
+    }
+  ]
+}

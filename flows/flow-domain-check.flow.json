@@ -1,0 +1,145 @@
+{
+  "version": "0.0.1",
+  "catchAll": {},
+  "startNode": "Slot-domain-check",
+  "description": "",
+  "nodes": [
+    {
+      "id": "6a7ab6dd22",
+      "name": "entry",
+      "onEnter": [
+        "builtin/resetContext {}",
+        "builtin/appendContext {\"contexts\":\"domain, global\",\"ttl\":\"3\"}"
+      ],
+      "onReceive": null,
+      "next": [
+        {
+          "condition": "true",
+          "node": "node-ask"
+        }
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "839b8a7629",
+      "type": "skill-call",
+      "skill": "Slot",
+      "name": "Slot-domain-check",
+      "flow": "skills/Slot-d8bc1b.flow.json",
+      "next": [
+        {
+          "caption": "On extracted",
+          "condition": "temp.extracted == \"true\"",
+          "node": "node-domain-api"
+        },
+        {
+          "caption": "On not found",
+          "condition": "temp.notExtracted == \"true\"",
+          "node": "node-return"
+        },
+        {
+          "caption": "On already extracted",
+          "condition": "temp.alreadyExtracted == \"true\"",
+          "node": "node-domain-api"
+        }
+      ],
+      "onEnter": null,
+      "onReceive": null
+    },
+    {
+      "id": "ae32c1d3de",
+      "name": "node-domain-replay",
+      "next": [
+        {
+          "condition": "event.state.temp.domains.avail == true",
+          "node": "choice-ask-register"
+        },
+        {
+          "condition": "event.state.temp.domains.avail == false",
+          "node": "entry"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-GSIyNb"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "1c8556288f",
+      "name": "node-return",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "END"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text--UHGfw"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "0c8d4b62ca",
+      "name": "node-ask",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "END"
+        }
+      ],
+      "onEnter": [
+        "basic-skills/slot_reset {\"slotName\":\"domain\"}",
+        "say #!builtin_text-465lIq"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "skill-8fb3d7",
+      "type": "skill-call",
+      "skill": "choice",
+      "name": "choice-ask-register",
+      "flow": "skills/choice-8fb3d7.flow.json",
+      "next": [
+        {
+          "caption": "User picked [0]",
+          "condition": "temp['skill-choice-ret-el95hj12ck'] == \"0\"",
+          "conditionType": "raw",
+          "node": "END"
+        },
+        {
+          "caption": "User picked [1]",
+          "condition": "temp['skill-choice-ret-el95hj12ck'] == \"1\"",
+          "node": "flow-resdomain-reservation.flow.json"
+        },
+        {
+          "caption": "On failure",
+          "condition": "true",
+          "conditionType": "always",
+          "node": "error.flow.json"
+        }
+      ],
+      "onEnter": null,
+      "onReceive": null
+    },
+    {
+      "id": "164e216675",
+      "name": "node-domain-api",
+      "next": [
+        {
+          "condition": "true",
+          "node": "node-domain-replay"
+        }
+      ],
+      "onEnter": [
+        "domain_chk_api {\"domain\":\"{{session.slots.domain.value}}\"}"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    }
+  ]
+}

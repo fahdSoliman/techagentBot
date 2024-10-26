@@ -1,0 +1,26 @@
+{
+  "id": "9w6d7wl13k_",
+  "data": {
+    "action": "redirect",
+    "contexts": [
+      "global"
+    ],
+    "enabled": false,
+    "answers": {
+      "ar": []
+    },
+    "questions": {
+      "ar": [
+        "مرحبا",
+        "حبيب القلب",
+        "السلام عليكم",
+        "سلامات ",
+        "تحياتي",
+        "صباح الخير",
+        "مساء النور"
+      ]
+    },
+    "redirectFlow": "main.flow.json",
+    "redirectNode": "node-channel"
+  }
+}

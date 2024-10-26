@@ -1,0 +1,141 @@
+{
+  "version": "0.0.1",
+  "catchAll": {
+    "onReceive": [],
+    "next": []
+  },
+  "startNode": "node-isGreeted-user",
+  "nodes": [
+    {
+      "id": "ffec6847a5",
+      "name": "node-no-knowledge",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "END"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-SiyQ_A"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "7ed246e81a",
+      "name": "node-detect-intent",
+      "next": [
+        {
+          "condition": "event.nlu.ambiguous",
+          "conditionType": "raw",
+          "node": "ambiguous-handling.flow.json"
+        },
+        {
+          "condition": "event.nlu.intent.name === 'intent-chatbot-help'",
+          "conditionType": "intent",
+          "node": "flow-chatbot-help.flow.json"
+        },
+        {
+          "condition": "event.nlu.intent.name === 'intent-product-info'",
+          "conditionType": "intent",
+          "node": "flow-product-info.flow.json"
+        },
+        {
+          "condition": "event.nlu.intent.name === 'intent-product-register'",
+          "conditionType": "intent",
+          "node": "flow-product-register.flow.json"
+        },
+        {
+          "condition": "event.nlu.intent.name === 'intent-product-edit'",
+          "conditionType": "intent",
+          "node": "flow-product-update.flow.json"
+        },
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "node-no-knowledge"
+        }
+      ],
+      "onEnter": [],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "eef8ded2fb",
+      "name": "node-channel",
+      "next": [
+        {
+          "condition": "event.channel === 'telegram'",
+          "conditionType": "raw",
+          "node": "flow-telegram.flow.json"
+        },
+        {
+          "condition": "event.channel === 'web'",
+          "conditionType": "raw",
+          "node": "node-knowledge-bart"
+        }
+      ],
+      "onEnter": [
+        "test {}"
+      ],
+      "onReceive": null
+    },
+    {
+      "id": "2542511481",
+      "name": "node-greet-user",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "node-channel"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-Rl_PpZ",
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"isGreet\",\"value\":\"true\"}"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "63a1b27d54",
+      "name": "node-isGreeted-user",
+      "next": [
+        {
+          "condition": "session.isGreet  === \"true\"",
+          "conditionType": "props",
+          "node": "node-channel"
+        },
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "node-greet-user"
+        }
+      ],
+      "onEnter": [],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "66af305832",
+      "name": "node-knowledge-bart",
+      "next": [
+        {
+          "condition": "temp.is_qa_answered",
+          "conditionType": "raw",
+          "node": "knowledge-base.flow.json"
+        },
+        {
+          "condition": "true",
+          "node": "node-detect-intent"
+        }
+      ],
+      "onEnter": [
+        "QA_LFQA_API {\"q\":\"{{event.payload.text}}\"}"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    }
+  ]
+}

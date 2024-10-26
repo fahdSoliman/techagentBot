@@ -1,0 +1,27 @@
+{
+  "id": "enyl4p544d_",
+  "data": {
+    "action": "redirect",
+    "contexts": [
+      "global"
+    ],
+    "enabled": false,
+    "answers": {
+      "ar": []
+    },
+    "questions": {
+      "ar": [
+        "لم أعد أرغب في ذلك",
+        "أريد إلغاء الطلب",
+        "لا أريد ذلك بعد الآن",
+        "مساعدتك لم تلبي التوقعات",
+        "مابدي",
+        "لا شكرا لك",
+        "ما بقا بدي",
+        "ما عاد بدي"
+      ]
+    },
+    "redirectFlow": "main.flow.json",
+    "redirectNode": "node-channel"
+  }
+}

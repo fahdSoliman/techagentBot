@@ -1,0 +1,152 @@
+{
+  "version": "0.0.1",
+  "catchAll": {
+    "onReceive": [],
+    "next": [
+      {
+        "condition": "event.nlu.intent.name === 'intent-cancel'",
+        "conditionType": "intent",
+        "node": "flow-end.flow.json"
+      }
+    ]
+  },
+  "startNode": "node-company-name",
+  "description": "",
+  "nodes": [
+    {
+      "id": "76b258d59b",
+      "name": "node-company-name",
+      "next": [
+        {
+          "condition": "true",
+          "node": "choice-company-type"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-fWF8rA"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"temp\",\"name\":\"customer_name\",\"value\":\"{{event.payload.text}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "ac569dad49",
+      "name": "node-company-email",
+      "next": [
+        {
+          "condition": "true",
+          "node": "node-save"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-Xatu4m"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"temp\",\"name\":\"company_email\",\"value\":\"{{event.nlu.entities.0.data.value}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "skill-bdbb01",
+      "type": "skill-call",
+      "skill": "choice",
+      "name": "choice-company-type",
+      "flow": "skills/choice-bdbb01.flow.json",
+      "next": [
+        {
+          "caption": "User picked [special]",
+          "condition": "temp['skill-choice-ret-company_type'] == \"special\"",
+          "node": "node-company-type"
+        },
+        {
+          "caption": "User picked [gov_man]",
+          "condition": "temp['skill-choice-ret-company_type'] == \"gov_man\"",
+          "node": "node-company-type"
+        },
+        {
+          "caption": "User picked [gov_fin]",
+          "condition": "temp['skill-choice-ret-company_type'] == \"gov_fin\"",
+          "node": "node-company-type"
+        },
+        {
+          "caption": "On failure",
+          "condition": "true",
+          "node": "error.flow.json"
+        }
+      ],
+      "onEnter": null,
+      "onReceive": null
+    },
+    {
+      "id": "3b2a65d65e",
+      "name": "node-company-city",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "node-company-phone"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-rrE9UC"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"temp\",\"name\":\"country\",\"value\":\"{{event.nlu.entities.0.data.value}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "18e0b9bc29",
+      "name": "node-company-type",
+      "next": [
+        {
+          "condition": "true",
+          "node": "node-company-city"
+        }
+      ],
+      "onEnter": [
+        "builtin/setVariable {\"type\":\"temp\",\"name\":\"company_type\",\"value\":\"{{temp.skill-choice-ret-company_type}}\"}",
+        "say #!builtin_text-r0BAZj"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "b9e16ea834",
+      "name": "node-company-phone",
+      "next": [
+        {
+          "condition": "true",
+          "node": "node-company-email"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-mQJkKH",
+        "say #!builtin_text-GGi_f4"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"temp\",\"name\":\"company_phone\",\"value\":\"{{event.nlu.entities.0.data.value}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "c492599702",
+      "name": "node-save",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "#"
+        }
+      ],
+      "onEnter": [
+        "test {}",
+        "customer_company_update_API {}",
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"company\",\"value\":\"false\"}"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    }
+  ]
+}

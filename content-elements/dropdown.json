@@ -1,0 +1,34 @@
+[
+  {
+    "id": "dropdown-ysfrgs",
+    "formData": {
+      "buttonText$ar": "",
+      "placeholderText$ar": "اختر خدمة",
+      "displayInKeyboard$ar": true,
+      "markdown$ar": true,
+      "typing$ar": true,
+      "options$ar": [
+        {
+          "label": "استضافة نطاق",
+          "value": "استضافة نطاق"
+        },
+        {
+          "label": "حجز نطاق",
+          "value": "حجز نطاق"
+        },
+        {
+          "label": "استضافة مستقلة افتراضية",
+          "value": "استضافة مستقلة افتراضية"
+        },
+        {
+          "label": "استضافة مشتركة",
+          "value": "استضافة مشتركة"
+        }
+      ],
+      "message$ar": "يرجى اختيار خدمة معينة من هذه الخدمات التي نقدمها"
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-05-08T18:23:15.175Z",
+    "modifiedOn": "2023-05-08T18:23:15.175Z"
+  }
+]

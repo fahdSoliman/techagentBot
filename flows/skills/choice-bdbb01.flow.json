@@ -1,0 +1,104 @@
+{
+  "version": "0.0.1",
+  "catchAll": {
+    "next": []
+  },
+  "startNode": "entry",
+  "skillData": {
+    "randomId": "34nzhppeep",
+    "contentId": "builtin_single-choice-qBGEys",
+    "invalidContentId": "",
+    "keywords": {
+      "special": [
+        "special",
+        "شركة خاصة"
+      ],
+      "gov_man": [
+        "gov_man",
+        "شركة حكومية إدارية"
+      ],
+      "gov_fin": [
+        "gov_fin",
+        "شركة حكومية مالية"
+      ]
+    },
+    "config": {
+      "nbMaxRetries": 3,
+      "repeatChoicesOnInvalid": false,
+      "variableName": "company_type"
+    }
+  },
+  "nodes": [
+    {
+      "name": "entry",
+      "onEnter": [
+        "builtin/setVariable {\"type\":\"temp\",\"name\":\"skill-choice-invalid-count-company_type\",\"value\": 0}",
+        "builtin/setVariable {\"type\":\"temp\",\"name\":\"skill-choice-valid-company_type\",\"value\": null}",
+        "builtin/setVariable {\"type\":\"temp\",\"name\":\"skill-choice-ret-company_type\",\"value\": null}",
+        "say #!builtin_single-choice-qBGEys {\"skill\":\"choice\"}"
+      ],
+      "next": [
+        {
+          "condition": "true",
+          "node": "parse"
+        }
+      ],
+      "id": "588663"
+    },
+    {
+      "name": "parse",
+      "onReceive": [
+        "basic-skills/choice_parse_answer {\"randomId\":\"company_type\",\"contentId\":\"builtin_single-choice-qBGEys\",\"invalidContentId\":\"\",\"keywords\":{\"special\":[\"special\",\"شركة خاصة\"],\"gov_man\":[\"gov_man\",\"شركة حكومية إدارية\"],\"gov_fin\":[\"gov_fin\",\"شركة حكومية مالية\"]},\"config\":{\"nbMaxRetries\":3,\"repeatChoicesOnInvalid\":false,\"variableName\":\"company_type\"}}"
+      ],
+      "next": [
+        {
+          "condition": "temp['skill-choice-valid-company_type'] === true",
+          "node": "#"
+        },
+        {
+          "condition": "true",
+          "node": "invalid"
+        }
+      ],
+      "triggers": [
+        {
+          "conditions": [
+            {
+              "id": "always"
+            }
+          ]
+        }
+      ],
+      "onEnter": [],
+      "id": "621748"
+    },
+    {
+      "name": "invalid",
+      "onEnter": [
+        "basic-skills/choice_invalid_answer {\"randomId\":\"company_type\"}"
+      ],
+      "next": [
+        {
+          "condition": "Number(temp['skill-choice-invalid-count-company_type']) > Number(3)",
+          "node": "#"
+        },
+        {
+          "condition": "true",
+          "node": "sorry"
+        }
+      ],
+      "id": "411352"
+    },
+    {
+      "name": "sorry",
+      "onEnter": [],
+      "next": [
+        {
+          "condition": "true",
+          "node": "parse"
+        }
+      ],
+      "id": "614563"
+    }
+  ]
+}

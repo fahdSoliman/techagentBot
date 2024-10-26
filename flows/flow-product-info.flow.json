@@ -1,0 +1,132 @@
+{
+  "version": "0.0.1",
+  "catchAll": {
+    "onReceive": [],
+    "next": [
+      {
+        "condition": "event.nlu.intent.name === 'intent-cancel'",
+        "conditionType": "intent",
+        "node": "flow-end.flow.json"
+      }
+    ]
+  },
+  "startNode": "Slot-product",
+  "description": "",
+  "nodes": [
+    {
+      "id": "skill-98e397",
+      "type": "skill-call",
+      "skill": "Slot",
+      "name": "Slot-product",
+      "flow": "skills/Slot-98e397.flow.json",
+      "next": [
+        {
+          "caption": "On extracted",
+          "condition": "temp.extracted == \"true\"",
+          "node": "Slot-package"
+        },
+        {
+          "caption": "On not found",
+          "condition": "temp.notExtracted == \"true\"",
+          "node": "error.flow.json"
+        },
+        {
+          "caption": "On already extracted",
+          "condition": "temp.alreadyExtracted == \"true\"",
+          "node": "Slot-package"
+        }
+      ],
+      "onEnter": null,
+      "onReceive": null
+    },
+    {
+      "id": "skill-79d650",
+      "type": "skill-call",
+      "skill": "Slot",
+      "name": "Slot-package",
+      "flow": "skills/Slot-79d650.flow.json",
+      "next": [
+        {
+          "caption": "On extracted",
+          "condition": "temp.extracted == \"true\"",
+          "node": "choice-32d80a"
+        },
+        {
+          "caption": "On not found",
+          "condition": "temp.notExtracted  == \"true\"",
+          "conditionType": "props",
+          "node": "error.flow.json"
+        },
+        {
+          "caption": "On already extracted",
+          "condition": "temp.alreadyExtracted == \"true\"",
+          "node": "choice-32d80a"
+        }
+      ],
+      "onEnter": null,
+      "onReceive": null
+    },
+    {
+      "id": "skill-32d80a",
+      "type": "skill-call",
+      "skill": "choice",
+      "name": "choice-32d80a",
+      "flow": "skills/choice-32d80a.flow.json",
+      "next": [
+        {
+          "caption": "User picked [0]",
+          "condition": "temp['skill-choice-ret-htyyqvkws7'] == \"0\"",
+          "node": "node-product-price"
+        },
+        {
+          "caption": "User picked [1]",
+          "condition": "temp['skill-choice-ret-htyyqvkws7'] == \"1\"",
+          "node": "node-product-info"
+        },
+        {
+          "caption": "On failure",
+          "condition": "true",
+          "node": "error.flow.json"
+        }
+      ],
+      "onEnter": null,
+      "onReceive": null
+    },
+    {
+      "id": "b62efeed87",
+      "name": "node-product-price",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "END"
+        }
+      ],
+      "onEnter": [
+        "product_price_API {\"product_type\":\"{{event.state.session.slots.product.value}}\",\"product_package\":\"{{event.state.session.slots.hosting_package.value}}\"}",
+        "basic-skills/slot_reset {\"slotName\":\"product\"}",
+        "basic-skills/slot_reset {\"slotName\":\"hosting_package\"}"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "30a46b0be6",
+      "name": "node-product-info",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "END"
+        }
+      ],
+      "onEnter": [
+        "product_details_API {\"product_type\":\"{{event.state.session.slots.product.value}}\",\"product_package\":\"{{event.state.session.slots.hosting_package.value}}\"}",
+        "basic-skills/slot_reset {\"slotName\":\"product\"}",
+        "basic-skills/slot_reset {\"slotName\":\"hosting_package\"}"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    }
+  ]
+}

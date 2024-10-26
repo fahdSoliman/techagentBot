@@ -1,0 +1,112 @@
+{
+  "version": "0.0.1",
+  "catchAll": {
+    "next": []
+  },
+  "startNode": "entry",
+  "skillData": {
+    "randomId": "bbh9iq1144",
+    "contentId": "builtin_single-choice-bF_Bjx",
+    "invalidContentId": "",
+    "keywords": {
+      "0": [
+        "0",
+        "إجراء كشف على الاشتراكات"
+      ],
+      "1": [
+        "1",
+        "التحقق من حالة الحساب"
+      ],
+      "2": [
+        "2",
+        "تحديث الملف الشخصي"
+      ],
+      "3": [
+        "3",
+        "التواصل مع موظف دعم"
+      ],
+      "9": [
+        "9",
+        "خروج"
+      ]
+    },
+    "config": {
+      "nbMaxRetries": 3,
+      "repeatChoicesOnInvalid": false,
+      "variableName": ""
+    }
+  },
+  "nodes": [
+    {
+      "name": "entry",
+      "onEnter": [
+        "builtin/setVariable {\"type\":\"temp\",\"name\":\"skill-choice-invalid-count-bbh9iq1144\",\"value\": 0}",
+        "builtin/setVariable {\"type\":\"temp\",\"name\":\"skill-choice-valid-bbh9iq1144\",\"value\": null}",
+        "builtin/setVariable {\"type\":\"temp\",\"name\":\"skill-choice-ret-bbh9iq1144\",\"value\": null}",
+        "say #!builtin_single-choice-bF_Bjx {\"skill\":\"choice\"}"
+      ],
+      "next": [
+        {
+          "condition": "true",
+          "node": "parse"
+        }
+      ],
+      "id": "113788"
+    },
+    {
+      "name": "parse",
+      "onReceive": [
+        "basic-skills/choice_parse_answer {\"randomId\":\"bbh9iq1144\",\"contentId\":\"builtin_single-choice-bF_Bjx\",\"invalidContentId\":\"\",\"keywords\":{\"0\":[\"0\",\"إجراء كشف على الاشتراكات\"],\"1\":[\"1\",\"التحقق من حالة الحساب\"],\"2\":[\"2\",\"تحديث الملف الشخصي\"],\"3\":[\"3\",\"التواصل مع موظف دعم\"],\"9\":[\"9\",\"خروج\"]},\"config\":{\"nbMaxRetries\":3,\"repeatChoicesOnInvalid\":false,\"variableName\":\"\"}}"
+      ],
+      "next": [
+        {
+          "condition": "temp['skill-choice-valid-bbh9iq1144'] === true",
+          "node": "#"
+        },
+        {
+          "condition": "true",
+          "node": "invalid"
+        }
+      ],
+      "triggers": [
+        {
+          "conditions": [
+            {
+              "id": "always"
+            }
+          ]
+        }
+      ],
+      "onEnter": [],
+      "id": "773478"
+    },
+    {
+      "name": "invalid",
+      "onEnter": [
+        "basic-skills/choice_invalid_answer {\"randomId\":\"bbh9iq1144\"}"
+      ],
+      "next": [
+        {
+          "condition": "Number(temp['skill-choice-invalid-count-bbh9iq1144']) > Number(3)",
+          "node": "#"
+        },
+        {
+          "condition": "true",
+          "node": "sorry"
+        }
+      ],
+      "id": "562278"
+    },
+    {
+      "name": "sorry",
+      "onEnter": [],
+      "next": [
+        {
+          "condition": "true",
+          "node": "parse"
+        }
+      ],
+      "id": "038149"
+    }
+  ]
+}

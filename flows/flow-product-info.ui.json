@@ -1,0 +1,131 @@
+{
+  "nodes": [
+    {
+      "id": "skill-98e397",
+      "position": {
+        "x": -120,
+        "y": -40
+      }
+    },
+    {
+      "id": "skill-79d650",
+      "position": {
+        "x": 155,
+        "y": -40
+      }
+    },
+    {
+      "id": "skill-32d80a",
+      "position": {
+        "x": 420,
+        "y": -35
+      }
+    },
+    {
+      "id": "b62efeed87",
+      "position": {
+        "x": 700,
+        "y": -110
+      }
+    },
+    {
+      "id": "30a46b0be6",
+      "position": {
+        "x": 700,
+        "y": 90
+      }
+    }
+  ],
+  "links": [
+    {
+      "source": "skill-32d80a",
+      "sourcePort": "out1",
+      "target": "30a46b0be6",
+      "points": [
+        {
+          "x": 620,
+          "y": 38
+        },
+        {
+          "x": 701,
+          "y": 107
+        }
+      ]
+    },
+    {
+      "source": "skill-32d80a",
+      "sourcePort": "out0",
+      "target": "b62efeed87",
+      "points": [
+        {
+          "x": 620,
+          "y": 10
+        },
+        {
+          "x": 701,
+          "y": -93
+        }
+      ]
+    },
+    {
+      "source": "skill-79d650",
+      "sourcePort": "out0",
+      "target": "skill-32d80a",
+      "points": [
+        {
+          "x": 355,
+          "y": 5
+        },
+        {
+          "x": 421,
+          "y": -18
+        }
+      ]
+    },
+    {
+      "source": "skill-79d650",
+      "sourcePort": "out2",
+      "target": "skill-32d80a",
+      "points": [
+        {
+          "x": 355,
+          "y": 60
+        },
+        {
+          "x": 421,
+          "y": -18
+        }
+      ]
+    },
+    {
+      "source": "skill-98e397",
+      "sourcePort": "out0",
+      "target": "skill-79d650",
+      "points": [
+        {
+          "x": 80,
+          "y": 5
+        },
+        {
+          "x": 156,
+          "y": -23
+        }
+      ]
+    },
+    {
+      "source": "skill-98e397",
+      "sourcePort": "out2",
+      "target": "skill-79d650",
+      "points": [
+        {
+          "x": 80,
+          "y": 60
+        },
+        {
+          "x": 156,
+          "y": -23
+        }
+      ]
+    }
+  ]
+}

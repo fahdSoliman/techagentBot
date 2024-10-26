@@ -1,0 +1,138 @@
+{
+  "nodes": [
+    {
+      "id": "efa67228b0",
+      "position": {
+        "x": 260,
+        "y": 70
+      }
+    },
+    {
+      "id": "skill-70a2d3",
+      "position": {
+        "x": 5,
+        "y": 65
+      }
+    },
+    {
+      "id": "3df3d197ca",
+      "position": {
+        "x": 5,
+        "y": 235
+      }
+    },
+    {
+      "id": "skill-5da32e",
+      "position": {
+        "x": 235,
+        "y": 265
+      }
+    },
+    {
+      "id": "50aafdbd16",
+      "position": {
+        "x": 515,
+        "y": 295
+      }
+    },
+    {
+      "id": "70a0a6196f",
+      "position": {
+        "x": 510,
+        "y": 65
+      }
+    }
+  ],
+  "links": [
+    {
+      "source": "3df3d197ca",
+      "sourcePort": "out0",
+      "target": "skill-5da32e",
+      "points": [
+        {
+          "x": 205,
+          "y": 323
+        },
+        {
+          "x": 236,
+          "y": 282
+        }
+      ]
+    },
+    {
+      "source": "efa67228b0",
+      "sourcePort": "out0",
+      "target": "70a0a6196f",
+      "points": [
+        {
+          "x": 460,
+          "y": 203
+        },
+        {
+          "x": 511,
+          "y": 82
+        }
+      ]
+    },
+    {
+      "source": "skill-5da32e",
+      "sourcePort": "out0",
+      "target": "50aafdbd16",
+      "points": [
+        {
+          "x": 435,
+          "y": 310
+        },
+        {
+          "x": 516,
+          "y": 312
+        }
+      ]
+    },
+    {
+      "source": "skill-70a2d3",
+      "sourcePort": "out1",
+      "target": "3df3d197ca",
+      "points": [
+        {
+          "x": 205,
+          "y": 138
+        },
+        {
+          "x": 6,
+          "y": 252
+        }
+      ]
+    },
+    {
+      "source": "skill-70a2d3",
+      "sourcePort": "out0",
+      "target": "efa67228b0",
+      "points": [
+        {
+          "x": 205,
+          "y": 110
+        },
+        {
+          "x": 261,
+          "y": 87
+        }
+      ]
+    },
+    {
+      "source": "skill-70a2d3",
+      "sourcePort": "out2",
+      "target": "efa67228b0",
+      "points": [
+        {
+          "x": 205,
+          "y": 166
+        },
+        {
+          "x": 261,
+          "y": 87
+        }
+      ]
+    }
+  ]
+}

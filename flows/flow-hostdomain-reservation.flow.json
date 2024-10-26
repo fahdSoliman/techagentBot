@@ -1,0 +1,129 @@
+{
+  "version": "0.0.1",
+  "catchAll": {},
+  "startNode": "Slot-domain",
+  "description": "",
+  "nodes": [
+    {
+      "id": "efa67228b0",
+      "name": "node-catch-ip",
+      "onEnter": [
+        "say #!builtin_text-VxDVBm"
+      ],
+      "onReceive": [
+        "validate_input {\"entitiy\":\"IP\",\"end_node\":\"choice-talk-to-agent\",\"variable\":\"IP_address\"}"
+      ],
+      "next": [
+        {
+          "condition": "true",
+          "node": "node-reservation-api"
+        }
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "skill-70a2d3",
+      "type": "skill-call",
+      "skill": "Slot",
+      "name": "Slot-domain",
+      "flow": "skills/Slot-70a2d3.flow.json",
+      "next": [
+        {
+          "caption": "On extracted",
+          "condition": "temp.extracted == \"true\"",
+          "node": "node-catch-ip"
+        },
+        {
+          "caption": "On not found",
+          "condition": "temp.notExtracted == \"true\"",
+          "node": "node-ask-agent"
+        },
+        {
+          "caption": "On already extracted",
+          "condition": "temp.alreadyExtracted == \"true\"",
+          "node": "node-catch-ip"
+        }
+      ],
+      "onEnter": null,
+      "onReceive": null
+    },
+    {
+      "id": "3df3d197ca",
+      "name": "node-ask-agent",
+      "next": [
+        {
+          "condition": "true",
+          "node": "choice-talk-to-agent"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-qWFCvv"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "skill-5da32e",
+      "type": "skill-call",
+      "skill": "choice",
+      "name": "choice-talk-to-agent",
+      "flow": "skills/choice-5da32e.flow.json",
+      "next": [
+        {
+          "caption": "User picked [0]",
+          "condition": "temp['skill-choice-ret-rrxbqgyad1'] == \"0\"",
+          "node": "node-end"
+        },
+        {
+          "caption": "User picked [1]",
+          "condition": "temp['skill-choice-ret-rrxbqgyad1'] == \"1\"",
+          "conditionType": "raw",
+          "node": "flow-ask-agent.flow.json"
+        },
+        {
+          "caption": "On failure",
+          "condition": "true",
+          "conditionType": "always",
+          "node": "flow-ask-agent.flow.json"
+        }
+      ],
+      "onEnter": null,
+      "onReceive": null
+    },
+    {
+      "id": "50aafdbd16",
+      "name": "node-end",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "END"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-qTwqMn"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "70a0a6196f",
+      "name": "node-reservation-api",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "END"
+        }
+      ],
+      "onEnter": [
+        "hostdomain_create_API {}",
+        "basic-skills/slot_reset {\"slotName\":\"product\"}",
+        "basic-skills/slot_reset {\"slotName\":\"hosting_package\"}",
+        "basic-skills/slot_reset {\"slotName\":\"domain\"}"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    }
+  ]
+}

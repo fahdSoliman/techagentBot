@@ -1,0 +1,104 @@
+{
+  "version": "0.0.1",
+  "catchAll": {
+    "next": []
+  },
+  "startNode": "entry",
+  "skillData": {
+    "randomId": "htyyqvkws7",
+    "contentId": "builtin_single-choice-eThpfC",
+    "invalidContentId": "",
+    "keywords": {
+      "0": [
+        "0",
+        "معلومات عن الاسعار",
+        "السعر",
+        "الاسعار"
+      ],
+      "1": [
+        "1",
+        "معلومات عن الخدمة",
+        "معلومات",
+        "تفاصيل عن الخدمة"
+      ]
+    },
+    "config": {
+      "nbMaxRetries": 3,
+      "repeatChoicesOnInvalid": false,
+      "variableName": ""
+    }
+  },
+  "nodes": [
+    {
+      "name": "entry",
+      "onEnter": [
+        "builtin/setVariable {\"type\":\"temp\",\"name\":\"skill-choice-invalid-count-htyyqvkws7\",\"value\": 0}",
+        "builtin/setVariable {\"type\":\"temp\",\"name\":\"skill-choice-valid-htyyqvkws7\",\"value\": null}",
+        "builtin/setVariable {\"type\":\"temp\",\"name\":\"skill-choice-ret-htyyqvkws7\",\"value\": null}",
+        "say #!builtin_single-choice-eThpfC {\"skill\":\"choice\"}"
+      ],
+      "next": [
+        {
+          "condition": "true",
+          "node": "parse"
+        }
+      ],
+      "id": "349356"
+    },
+    {
+      "name": "parse",
+      "onReceive": [
+        "basic-skills/choice_parse_answer {\"randomId\":\"htyyqvkws7\",\"contentId\":\"builtin_single-choice-eThpfC\",\"invalidContentId\":\"\",\"keywords\":{\"0\":[\"0\",\"معلومات عن الاسعار\",\"السعر\",\"الاسعار\"],\"1\":[\"1\",\"معلومات عن الخدمة\",\"معلومات\",\"تفاصيل عن الخدمة\"]},\"config\":{\"nbMaxRetries\":3,\"repeatChoicesOnInvalid\":false,\"variableName\":\"\"}}"
+      ],
+      "next": [
+        {
+          "condition": "temp['skill-choice-valid-htyyqvkws7'] === true",
+          "node": "#"
+        },
+        {
+          "condition": "true",
+          "node": "invalid"
+        }
+      ],
+      "triggers": [
+        {
+          "conditions": [
+            {
+              "id": "always"
+            }
+          ]
+        }
+      ],
+      "onEnter": [],
+      "id": "215679"
+    },
+    {
+      "name": "invalid",
+      "onEnter": [
+        "basic-skills/choice_invalid_answer {\"randomId\":\"htyyqvkws7\"}"
+      ],
+      "next": [
+        {
+          "condition": "Number(temp['skill-choice-invalid-count-htyyqvkws7']) > Number(3)",
+          "node": "#"
+        },
+        {
+          "condition": "true",
+          "node": "sorry"
+        }
+      ],
+      "id": "478050"
+    },
+    {
+      "name": "sorry",
+      "onEnter": [],
+      "next": [
+        {
+          "condition": "true",
+          "node": "parse"
+        }
+      ],
+      "id": "306244"
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "version": "0.0.1",
+  "catchAll": {
+    "onReceive": [],
+    "next": [
+      {
+        "condition": "event.nlu.intent.name === 'intent-cancel'",
+        "conditionType": "intent",
+        "node": "flow-end.flow.json"
+      }
+    ]
+  },
+  "startNode": "entry-fin-name",
+  "description": "",
+  "nodes": [
+    {
+      "id": "d55e4e9751",
+      "name": "entry-fin-name",
+      "onEnter": [
+        "say #!builtin_text-Oe9OVx"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"temp\",\"name\":\"financial_name\",\"value\":\"{{event.payload.text}}\"}"
+      ],
+      "next": [
+        {
+          "condition": "true",
+          "node": "node-fin-phone"
+        }
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "d6bfddcde0",
+      "name": "node-fin-phone",
+      "next": [
+        {
+          "condition": "true",
+          "node": "node-fin-email"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-X2qfNY"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"temp\",\"name\":\"fin_phone\",\"value\":\"{{event.nlu.entities.0.data.value}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "4031d2ea02",
+      "name": "node-fin-email",
+      "next": [
+        {
+          "condition": "true",
+          "node": "node-save"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-3WXcc4"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"temp\",\"name\":\"fin_email\",\"value\":\"{{event.nlu.entities.0.data.value}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "8c00fbcc51",
+      "name": "node-save",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "#"
+        }
+      ],
+      "onEnter": [
+        "customer_financial_update_API {}",
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"fin\",\"value\":\"false\"}"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    }
+  ]
+}

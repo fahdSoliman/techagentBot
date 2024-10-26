@@ -1,0 +1,219 @@
+{
+  "version": "0.0.1",
+  "catchAll": {
+    "onReceive": [],
+    "next": [
+      {
+        "condition": "event.nlu.intent.name === 'intent-cancel'",
+        "conditionType": "intent",
+        "node": "flow-end.flow.json"
+      }
+    ]
+  },
+  "startNode": "entry",
+  "description": "",
+  "nodes": [
+    {
+      "id": "179ff267b6",
+      "name": "entry",
+      "onEnter": [],
+      "onReceive": null,
+      "next": [
+        {
+          "condition": "event.channel === 'web'",
+          "conditionType": "raw",
+          "node": "node-web"
+        },
+        {
+          "condition": "event.channel === 'telegram'",
+          "conditionType": "raw",
+          "node": "node-telegram"
+        }
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "1561979f27",
+      "name": "node-web",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "END"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-3b7KDC"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "f5a029bb3b",
+      "name": "node-telegram",
+      "next": [
+        {
+          "condition": "true",
+          "node": "choice-has-user"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-fOJfKD",
+        "say #!builtin_text-z806dC"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "skill-1688cf",
+      "type": "skill-call",
+      "skill": "choice",
+      "name": "choice-has-user",
+      "flow": "skills/choice-1688cf.flow.json",
+      "next": [
+        {
+          "caption": "User picked [0]",
+          "condition": "temp['skill-choice-ret-po7kiytpmc'] == \"0\"",
+          "node": "node-visitor"
+        },
+        {
+          "caption": "User picked [1]",
+          "condition": "temp['skill-choice-ret-po7kiytpmc'] == \"1\"",
+          "node": "node-get-username"
+        },
+        {
+          "caption": "On failure",
+          "condition": "true",
+          "conditionType": "always",
+          "node": "flow-end.flow.json"
+        }
+      ],
+      "onEnter": null,
+      "onReceive": null
+    },
+    {
+      "id": "468f66455c",
+      "name": "node-get-username",
+      "next": [
+        {
+          "condition": "true",
+          "node": "node-get-password"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-2XvFTu"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"temp\",\"name\":\"username\",\"value\":\"{{event.payload.text}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "cdb5bd4633",
+      "name": "node-visitor",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "END"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-qikldH"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "5f44e80f9a",
+      "name": "node-get-password",
+      "next": [
+        {
+          "condition": "true",
+          "node": "node-check-user"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-J5o2-P"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"temp\",\"name\":\"password\",\"value\":\"{{event.payload.text}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "b16c60d8da",
+      "name": "node-check-user",
+      "next": [
+        {
+          "condition": "user.userid !== undefined",
+          "conditionType": "raw",
+          "node": "node-welcome-customer"
+        },
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "node-welcome-visitor"
+        }
+      ],
+      "onEnter": [
+        "customer_authentication_API {}",
+        "test {}"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "c653742eb3",
+      "name": "node-welcome-customer",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "END"
+        }
+      ],
+      "onEnter": [
+        "customer_profile_update_telegram_API {}",
+        "say #!builtin_text-Rl_PpZ",
+        "say #!builtin_text-Jfw6S0"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "1bf4d066ad",
+      "name": "node-welcome-visitor",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "END"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-5wwogf"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "1db3377770",
+      "name": "node-ac2e",
+      "next": [
+        {
+          "condition": "user.userid !== undefined",
+          "conditionType": "raw",
+          "node": "main.flow.json"
+        },
+        {
+          "condition": "true",
+          "node": "entry"
+        }
+      ],
+      "onEnter": [],
+      "onReceive": null,
+      "type": "standard"
+    }
+  ]
+}

@@ -1,0 +1,153 @@
+{
+  "nodes": [
+    {
+      "id": "0f4364d6ea",
+      "position": {
+        "x": 260,
+        "y": -65
+      }
+    },
+    {
+      "id": "skill-9896eb",
+      "position": {
+        "x": 265,
+        "y": 65
+      }
+    },
+    {
+      "id": "94185d9a4b",
+      "position": {
+        "x": 505,
+        "y": -55
+      }
+    },
+    {
+      "id": "5a7062a95b",
+      "position": {
+        "x": 505,
+        "y": 60
+      }
+    },
+    {
+      "id": "0aad4de7e3",
+      "position": {
+        "x": 735,
+        "y": 360
+      }
+    },
+    {
+      "id": "skill-d66db5",
+      "position": {
+        "x": 510,
+        "y": 360
+      }
+    }
+  ],
+  "links": [
+    {
+      "source": "0f4364d6ea",
+      "sourcePort": "out0",
+      "target": "skill-9896eb",
+      "points": [
+        {
+          "x": 460,
+          "y": 23
+        },
+        {
+          "x": 266,
+          "y": 82
+        }
+      ]
+    },
+    {
+      "source": "5a7062a95b",
+      "sourcePort": "out3",
+      "target": "skill-d66db5",
+      "points": [
+        {
+          "x": 705,
+          "y": 321
+        },
+        {
+          "x": 511,
+          "y": 377
+        }
+      ]
+    },
+    {
+      "source": "skill-9896eb",
+      "sourcePort": "out1",
+      "target": "5a7062a95b",
+      "points": [
+        {
+          "x": 465,
+          "y": 138
+        },
+        {
+          "x": 506,
+          "y": 77
+        }
+      ]
+    },
+    {
+      "source": "skill-9896eb",
+      "sourcePort": "out0",
+      "target": "94185d9a4b",
+      "points": [
+        {
+          "x": 465,
+          "y": 110
+        },
+        {
+          "x": 506,
+          "y": -38
+        }
+      ]
+    },
+    {
+      "source": "skill-9896eb",
+      "sourcePort": "out2",
+      "target": "94185d9a4b",
+      "points": [
+        {
+          "x": 465,
+          "y": 166
+        },
+        {
+          "x": 506,
+          "y": -38
+        }
+      ]
+    },
+    {
+      "source": "skill-d66db5",
+      "sourcePort": "out0",
+      "target": "0aad4de7e3",
+      "points": [
+        {
+          "x": 710,
+          "y": 405
+        },
+        {
+          "x": 736,
+          "y": 377
+        }
+      ]
+    },
+    {
+      "source": "skill-d66db5",
+      "sourcePort": "out1",
+      "target": "0aad4de7e3",
+      "points": [
+        {
+          "x": 710,
+          "y": 433
+        },
+        {
+          "x": 736,
+          "y": 377
+        }
+      ]
+    }
+  ]
+}

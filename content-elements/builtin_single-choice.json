@@ -1,0 +1,524 @@
+[
+  {
+    "id": "builtin_single-choice-MIP8ud",
+    "formData": {
+      "dropdownPlaceholder$ar": "Select...",
+      "choices$ar": [
+        {
+          "title": "نعم",
+          "value": "1"
+        },
+        {
+          "title": "لا ",
+          "value": "0"
+        }
+      ],
+      "markdown$ar": true,
+      "disableFreeText$ar": true,
+      "typing$ar": true,
+      "text$ar": "هل ترغب بحجز هذا النطاق؟"
+    },
+    "createdBy": "admin",
+    "createdOn": "2021-03-18T07:58:12.790Z",
+    "modifiedOn": "2021-03-18T18:55:08.781Z"
+  },
+  {
+    "id": "builtin_single-choice-5ea-iQ",
+    "formData": {
+      "dropdownPlaceholder$ar": "اختر ..",
+      "choices$ar": [
+        {
+          "title": "نعم، سأقوم بتزويدك بالبيانات لحفظها في الحساب.",
+          "value": "1"
+        },
+        {
+          "title": "لا، سأقوم بتحديث البيانات لاحقاً من صفحة تحديث البيانات.",
+          "value": "0"
+        }
+      ],
+      "markdown$ar": true,
+      "disableFreeText$ar": false,
+      "typing$ar": true,
+      "text$ar": "هل نقوم بتحديث بيانات الحساب؟",
+      "displayInMessage$ar": false
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-05-19T18:36:58.414Z",
+    "modifiedOn": "2023-12-04T13:29:30.815Z"
+  },
+  {
+    "id": "builtin_single-choice-qBGEys",
+    "formData": {
+      "dropdownPlaceholder$ar": "اختر...",
+      "choices$ar": [
+        {
+          "title": "شركة خاصة",
+          "value": "special"
+        },
+        {
+          "title": "شركة حكومية إدارية",
+          "value": "gov_man"
+        },
+        {
+          "title": "شركة حكومية مالية",
+          "value": "gov_fin"
+        }
+      ],
+      "markdown$ar": true,
+      "disableFreeText$ar": false,
+      "typing$ar": true,
+      "text$ar": "اختر نوع الشركة",
+      "displayInMessage$ar": false
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-05-19T19:46:51.250Z",
+    "modifiedOn": "2024-03-21T23:07:22.769Z"
+  },
+  {
+    "id": "builtin_single-choice-bYaha8",
+    "formData": {
+      "dropdownPlaceholder$ar": "اختر...",
+      "choices$ar": [
+        {
+          "title": "ماذا استطيع أن قدم لك",
+          "value": "1"
+        },
+        {
+          "title": "الاستعلام عن الخدمات",
+          "value": "2"
+        },
+        {
+          "title": "التواصل مع موظف",
+          "value": "3"
+        },
+        {
+          "title": "خروج",
+          "value": "9"
+        }
+      ],
+      "markdown$ar": true,
+      "disableFreeText$ar": false,
+      "displayInMessage$ar": false,
+      "typing$ar": true,
+      "text$ar": "إليك عدة امور يمكنني ان افعلها لك!",
+      "isDropdown$ar": false
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-09-23T16:53:33.258Z",
+    "modifiedOn": "2023-12-07T23:30:01.444Z"
+  },
+  {
+    "id": "builtin_single-choice-hpbdTF",
+    "formData": {
+      "dropdownPlaceholder$ar": "اختر...",
+      "choices$ar": [
+        {
+          "title": "الحجز مع التفعيل",
+          "value": "1"
+        },
+        {
+          "title": "الحجز بدون تفعيل",
+          "value": "0"
+        }
+      ],
+      "markdown$ar": true,
+      "disableFreeText$ar": true,
+      "displayInMessage$ar": false,
+      "typing$ar": true,
+      "text$ar": "يمكنك حجز هذا النطاق \nهل تريد حجزه مع خيار \"التفعيل مع الحجز\"؟",
+      "isDropdown$ar": false
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-09-27T00:04:30.924Z",
+    "modifiedOn": "2024-05-03T15:17:48.611Z"
+  },
+  {
+    "id": "builtin_single-choice-u8NYb_",
+    "formData": {
+      "dropdownPlaceholder$ar": "اختر...",
+      "choices$ar": [
+        {
+          "title": "نعم لنجرب عنوان أخر",
+          "value": "1"
+        },
+        {
+          "title": "لا، لا أرغب بذلك",
+          "value": "0"
+        }
+      ],
+      "markdown$ar": true,
+      "disableFreeText$ar": true,
+      "displayInMessage$ar": false,
+      "typing$ar": true,
+      "text$ar": "هذا النطاق محجوز، هل ترغب بالمحاولة مرة أخرى؟"
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-09-29T17:38:09.388Z",
+    "modifiedOn": "2023-09-29T17:38:09.388Z"
+  },
+  {
+    "id": "builtin_single-choice-xxAYKp",
+    "formData": {
+      "dropdownPlaceholder$ar": "اختر...",
+      "choices$ar": [
+        {
+          "title": "نطاق لاتيني",
+          "value": "0"
+        },
+        {
+          "title": "نطاق عربي",
+          "value": "1"
+        }
+      ],
+      "markdown$ar": true,
+      "disableFreeText$ar": false,
+      "displayInMessage$ar": false,
+      "typing$ar": true,
+      "text$ar": "اختر نوع النطاق"
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-10-06T11:31:30.474Z",
+    "modifiedOn": "2023-10-06T11:31:30.474Z"
+  },
+  {
+    "id": "builtin_single-choice-Xc4kCj",
+    "formData": {
+      "dropdownPlaceholder$ar": "Select...",
+      "choices$ar": [
+        {
+          "title": "استضافة نطاق",
+          "value": "0"
+        },
+        {
+          "title": "حجز نطاق",
+          "value": "1"
+        },
+        {
+          "title": "استضافة مشتركة",
+          "value": "2"
+        },
+        {
+          "title": "استضافة مستقلة VPS",
+          "value": "3"
+        }
+      ],
+      "markdown$ar": true,
+      "disableFreeText$ar": false,
+      "displayInMessage$ar": false,
+      "typing$ar": true,
+      "text$ar": "اختر خدمة"
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-11-09T14:37:31.401Z",
+    "modifiedOn": "2023-11-09T14:37:31.401Z"
+  },
+  {
+    "id": "builtin_single-choice-pO3moY",
+    "formData": {
+      "dropdownPlaceholder$ar": "Select...",
+      "choices$ar": [
+        {
+          "title": "باقة توفيرية",
+          "value": "0"
+        },
+        {
+          "title": "باقة اقتصادية",
+          "value": "1"
+        },
+        {
+          "title": "باقة الاعمال",
+          "value": "2"
+        },
+        {
+          "title": "الباقة الاحترافية",
+          "value": "3"
+        }
+      ],
+      "markdown$ar": true,
+      "disableFreeText$ar": false,
+      "displayInMessage$ar": false,
+      "typing$ar": true,
+      "text$ar": "اختر باقة"
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-11-09T14:41:31.727Z",
+    "modifiedOn": "2023-11-09T14:41:31.727Z"
+  },
+  {
+    "id": "builtin_single-choice-eThpfC",
+    "formData": {
+      "dropdownPlaceholder$ar": "اختر...",
+      "choices$ar": [
+        {
+          "title": "معلومات عن الاسعار",
+          "value": "0"
+        },
+        {
+          "title": "معلومات عن الخدمة",
+          "value": "1"
+        }
+      ],
+      "markdown$ar": true,
+      "disableFreeText$ar": true,
+      "displayInMessage$ar": false,
+      "typing$ar": true,
+      "text$ar": "يمكنني اعطاءك سعر الخدمة أو معلومات عامة عن الخدمة"
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-11-09T15:08:48.371Z",
+    "modifiedOn": "2023-12-04T11:27:01.437Z"
+  },
+  {
+    "id": "builtin_single-choice-bF_Bjx",
+    "formData": {
+      "dropdownPlaceholder$ar": "Select...",
+      "choices$ar": [
+        {
+          "title": "إجراء كشف على الاشتراكات",
+          "value": "0"
+        },
+        {
+          "title": "التحقق من حالة الحساب",
+          "value": "1"
+        },
+        {
+          "title": "تحديث الملف الشخصي",
+          "value": "2"
+        },
+        {
+          "title": "التواصل مع موظف دعم",
+          "value": "3"
+        },
+        {
+          "title": "خروج",
+          "value": "9"
+        }
+      ],
+      "markdown$ar": true,
+      "disableFreeText$ar": false,
+      "displayInMessage$ar": false,
+      "typing$ar": true,
+      "text$ar": "ماذا ترغب مني أن افعل؟"
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-11-25T23:10:28.064Z",
+    "modifiedOn": "2024-05-30T21:18:17.286Z"
+  },
+  {
+    "id": "builtin_single-choice-PmlOOk",
+    "formData": {
+      "dropdownPlaceholder$ar": "Select...",
+      "choices$ar": [
+        {
+          "title": "نعم",
+          "value": "1"
+        },
+        {
+          "title": "لا",
+          "value": "0"
+        }
+      ],
+      "markdown$ar": true,
+      "disableFreeText$ar": false,
+      "displayInMessage$ar": false,
+      "typing$ar": true,
+      "text$ar": "هل ترغب بمعرفة المزيد؟"
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-11-27T19:19:54.681Z",
+    "modifiedOn": "2023-11-27T19:19:54.681Z"
+  },
+  {
+    "id": "builtin_single-choice-r6tkOE",
+    "formData": {
+      "dropdownPlaceholder$ar": "اختر...",
+      "choices$ar": [
+        {
+          "title": "ذكر",
+          "value": "male"
+        },
+        {
+          "title": "انثى",
+          "value": "female"
+        }
+      ],
+      "markdown$ar": true,
+      "disableFreeText$ar": true,
+      "displayInMessage$ar": false,
+      "typing$ar": true,
+      "text$ar": "ما هو الجنس؟"
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-12-04T10:45:41.743Z",
+    "modifiedOn": "2023-12-08T00:06:59.493Z"
+  },
+  {
+    "id": "builtin_single-choice-N1zmuM",
+    "formData": {
+      "dropdownPlaceholder$ar": "اختر ...",
+      "choices$ar": [
+        {
+          "title": "لا شكراً لك على ذلك",
+          "value": "0"
+        },
+        {
+          "title": "نعم أريد بعض المعلومات",
+          "value": "1"
+        }
+      ],
+      "markdown$ar": true,
+      "disableFreeText$ar": true,
+      "displayInMessage$ar": false,
+      "typing$ar": true,
+      "text$ar": "يمكنني إعطائك بعض المعلومات عن الخدمات إن كنت ترغب"
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-12-06T21:35:36.443Z",
+    "modifiedOn": "2023-12-06T21:35:36.443Z"
+  },
+  {
+    "id": "builtin_single-choice-X5JcaQ",
+    "formData": {
+      "dropdownPlaceholder$ar": "اختر ...",
+      "choices$ar": [
+        {
+          "title": "لا شكراً لك على ذلك",
+          "value": "0"
+        },
+        {
+          "title": "نعم أريد بعض المعلومات",
+          "value": "1"
+        }
+      ],
+      "markdown$ar": true,
+      "disableFreeText$ar": true,
+      "displayInMessage$ar": false,
+      "typing$ar": true,
+      "text$ar": "يمكنني إعطائك بعض المعلومات عن الخدمات إن كنت ترغب"
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-12-06T21:35:38.034Z",
+    "modifiedOn": "2023-12-06T21:35:38.034Z"
+  },
+  {
+    "id": "builtin_single-choice-R640_M",
+    "formData": {
+      "dropdownPlaceholder$ar": "اختر ...",
+      "choices$ar": [
+        {
+          "title": "نعم",
+          "value": "1"
+        },
+        {
+          "title": "لا",
+          "value": "0"
+        }
+      ],
+      "markdown$ar": true,
+      "disableFreeText$ar": false,
+      "displayInMessage$ar": false,
+      "typing$ar": true,
+      "text$ar": "هل تعتقد انه لديك حساب لدينا؟"
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-03-18T22:38:09.368Z",
+    "modifiedOn": "2024-03-18T22:38:09.368Z"
+  },
+  {
+    "id": "builtin_single-choice-FZAAg7",
+    "formData": {
+      "dropdownPlaceholder$ar": "Select...",
+      "choices$ar": [
+        {
+          "title": "نعم",
+          "value": "1"
+        },
+        {
+          "title": "لا",
+          "value": "0"
+        }
+      ],
+      "markdown$ar": true,
+      "disableFreeText$ar": false,
+      "displayInMessage$ar": false,
+      "typing$ar": true,
+      "text$ar": "هل ترغب بتعديل المزيد؟"
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-05-18T01:33:24.392Z",
+    "modifiedOn": "2024-05-18T01:33:24.392Z"
+  },
+  {
+    "id": "builtin_single-choice-IucnK7",
+    "formData": {
+      "dropdownPlaceholder$ar": "اختر...",
+      "choices$ar": [
+        {
+          "title": "نعم",
+          "value": "1"
+        },
+        {
+          "title": "لا",
+          "value": "0"
+        }
+      ],
+      "markdown$ar": true,
+      "disableFreeText$ar": false,
+      "displayInMessage$ar": false,
+      "typing$ar": true,
+      "text$ar": "اختر خياراً"
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-05-20T22:40:20.519Z",
+    "modifiedOn": "2024-05-20T22:40:20.519Z"
+  },
+  {
+    "id": "builtin_single-choice-8Fcbfs",
+    "formData": {
+      "dropdownPlaceholder$ar": "اختر ...",
+      "choices$ar": [
+        {
+          "title": "تقييم بالايجاب",
+          "value": "1"
+        },
+        {
+          "title": "تقييم بالسلبية",
+          "value": "-1"
+        }
+      ],
+      "markdown$ar": true,
+      "disableFreeText$ar": true,
+      "displayInMessage$ar": false,
+      "typing$ar": true,
+      "text$ar": "أتمنى أن يكون الجواب الذي قدمته قد اجاب عن سؤالك.\nإن كنت لا تمانع من تقييم الجواب بالايجابة او السلبية حتى يتسنى لي تحسين هذه الاجوبة في المرات القادمة"
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-05-23T17:12:01.143Z",
+    "modifiedOn": "2024-05-23T17:12:01.143Z"
+  },
+  {
+    "id": "builtin_single-choice-QWIkXO",
+    "formData": {
+      "dropdownPlaceholder$ar": "اختر...",
+      "choices$ar": [
+        {
+          "title": "نعم",
+          "value": "1"
+        },
+        {
+          "title": "لا",
+          "value": "0"
+        }
+      ],
+      "markdown$ar": true,
+      "disableFreeText$ar": false,
+      "displayInMessage$ar": false,
+      "typing$ar": true,
+      "text$ar": "هل ترغب بالحصول على مساعدة من موظفي الدعم؟",
+      "isDropdown$ar": false
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-06-04T01:39:34.349Z",
+    "modifiedOn": "2024-06-04T01:39:34.349Z"
+  }
+]

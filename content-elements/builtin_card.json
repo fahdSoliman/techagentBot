@@ -1,0 +1,21 @@
+[
+  {
+    "id": "builtin_card-iIE6sG",
+    "formData": {
+      "actions$ar": [
+        {
+          "action": "Open URL",
+          "title": "عنوان الزر",
+          "text": "",
+          "url": "رابط تسجيل"
+        }
+      ],
+      "title$ar": "بطاقة",
+      "subtitle$ar": "عنوان فرعي",
+      "image$ar": "/api/v1/bots/techagent/media/z4u7d300mbp2s1x76jry-gold-icon.png"
+    },
+    "createdBy": "admin",
+    "createdOn": "2023-05-07T19:46:40.843Z",
+    "modifiedOn": "2023-05-07T19:47:42.480Z"
+  }
+]

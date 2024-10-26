@@ -1,0 +1,171 @@
+{
+  "version": "0.0.1",
+  "catchAll": {},
+  "startNode": "node-check",
+  "description": "",
+  "nodes": [
+    {
+      "id": "243adb353f",
+      "name": "product-check",
+      "onEnter": [
+        "product_update_check {\"domain\":\"{{event.state.session.slots.domain.value}}\",\"product\":\"{{event.state.session.slots.product.value}}\"}"
+      ],
+      "onReceive": null,
+      "next": [
+        {
+          "condition": "temp.product_founded",
+          "conditionType": "raw",
+          "node": "node-to-sub-flow"
+        },
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "node-give-user-reservations"
+        }
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "skill-dadd68",
+      "type": "skill-call",
+      "skill": "Slot",
+      "name": "Slot-product",
+      "flow": "skills/Slot-dadd68.flow.json",
+      "next": [
+        {
+          "caption": "On extracted",
+          "condition": "temp.extracted == \"true\"",
+          "node": "Slot-domain"
+        },
+        {
+          "caption": "On not found",
+          "condition": "temp.notExtracted == \"true\"",
+          "node": ""
+        },
+        {
+          "caption": "On already extracted",
+          "condition": "temp.alreadyExtracted == \"true\"",
+          "node": "Slot-domain"
+        }
+      ],
+      "onEnter": null,
+      "onReceive": null
+    },
+    {
+      "id": "skill-3b2d30",
+      "type": "skill-call",
+      "skill": "Slot",
+      "name": "Slot-domain",
+      "flow": "skills/Slot-3b2d30.flow.json",
+      "next": [
+        {
+          "caption": "On extracted",
+          "condition": "temp.extracted == \"true\"",
+          "node": "product-check"
+        },
+        {
+          "caption": "On not found",
+          "condition": "temp.notExtracted == \"true\"",
+          "node": ""
+        },
+        {
+          "caption": "On already extracted",
+          "condition": "temp.alreadyExtracted == \"true\"",
+          "node": "product-check"
+        }
+      ],
+      "onEnter": null,
+      "onReceive": null
+    },
+    {
+      "id": "eab812d3a6",
+      "name": "node-check",
+      "next": [
+        {
+          "condition": "user.userid !== undefined",
+          "conditionType": "raw",
+          "node": "Slot-product"
+        },
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "flow-customer-authentication.flow.json"
+        }
+      ],
+      "onEnter": [],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "8c2a9a6fef",
+      "name": "node-give-user-reservations",
+      "next": [
+        {
+          "condition": "event.state.session.slots.domain",
+          "conditionType": "raw",
+          "node": "Slot-domain"
+        },
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "node-d798"
+        }
+      ],
+      "onEnter": [
+        "basic-skills/slot_reset {\"slotName\":\"domain\"}",
+        "product_give_reservations {\"product\":\"{{event.state.session.slots.product.value}}\"}"
+      ],
+      "onReceive": [],
+      "type": "standard"
+    },
+    {
+      "id": "6195d7ce46",
+      "name": "node-to-sub-flow",
+      "next": [
+        {
+          "condition": "session.slots.product.value === 'حجز نطاق'",
+          "conditionType": "raw",
+          "node": "flow-resdomain-update.flow.json"
+        },
+        {
+          "condition": "session.slots.product.value === 'استضافة نطاق'",
+          "conditionType": "raw",
+          "node": "flow-hostdomain-update.flow.json"
+        },
+        {
+          "condition": "session.slots.product.value === 'استضافة مشتركة'",
+          "conditionType": "raw",
+          "node": "flow-shared-update.flow.json"
+        },
+        {
+          "condition": "session.slots.product.value === 'استضافة مستقلة افتراضية'",
+          "conditionType": "raw",
+          "node": "flow-vps-update.flow.json"
+        }
+      ],
+      "onEnter": [],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "43fd80ec32",
+      "name": "node-d798",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "END"
+        }
+      ],
+      "onEnter": [
+        "test {}",
+        "basic-skills/slot_reset {\"slotName\":\"domain\"}",
+        "basic-skills/slot_reset {\"slotName\":\"product\"}",
+        "basic-skills/slot_reset {\"slotName\":\"fields\"}",
+        "say #!builtin_text-qTwqMn"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    }
+  ]
+}

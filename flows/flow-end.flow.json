@@ -1,0 +1,27 @@
+{
+  "version": "0.0.1",
+  "catchAll": {},
+  "startNode": "entry",
+  "description": "",
+  "nodes": [
+    {
+      "id": "cb99a9d077",
+      "name": "entry",
+      "onEnter": [
+        "say #!builtin_text-Wqxr-E",
+        "basic-skills/slot_reset {\"slotName\":\"domain\"}",
+        "basic-skills/slot_reset {\"slotName\":\"product\"}",
+        "basic-skills/slot_reset {\"slotName\":\"hosting_package\"}"
+      ],
+      "onReceive": null,
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "END"
+        }
+      ],
+      "type": "standard"
+    }
+  ]
+}

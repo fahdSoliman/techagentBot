@@ -1,0 +1,85 @@
+{
+  "version": "0.0.1",
+  "catchAll": {
+    "onReceive": [],
+    "next": [
+      {
+        "condition": "event.nlu.intent.name === 'intent-cancel'",
+        "conditionType": "intent",
+        "node": "flow-end.flow.json"
+      }
+    ]
+  },
+  "startNode": "entry-tech-name",
+  "description": "",
+  "nodes": [
+    {
+      "id": "bb21ac6c62",
+      "name": "entry-tech-name",
+      "onEnter": [
+        "say #!builtin_text-W55Yfj"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"temp\",\"name\":\"technical_name\",\"value\":\"{{event.payload.text}}\"}"
+      ],
+      "next": [
+        {
+          "condition": "true",
+          "node": "node-tech-phone"
+        }
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "addd0dd6ba",
+      "name": "node-tech-phone",
+      "next": [
+        {
+          "condition": "true",
+          "node": "node-tech-email"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-X5_TBX"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"temp\",\"name\":\"tech_phone\",\"value\":\"{{event.nlu.entities.0.data.value}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "32f026525b",
+      "name": "node-tech-email",
+      "next": [
+        {
+          "condition": "true",
+          "node": "node-save"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-TRwUZL"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"temp\",\"name\":\"tech_email\",\"value\":\"{{event.nlu.entities.0.data.value}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "59ac888f3d",
+      "name": "node-save",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "#"
+        }
+      ],
+      "onEnter": [
+        "customer_technical_update_API {}",
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"tech\",\"value\":\"false\"}"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    }
+  ]
+}

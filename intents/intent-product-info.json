@@ -1,0 +1,36 @@
+{
+  "name": "intent-product-info",
+  "utterances": {
+    "ar": [
+      "مواصفات خدمة [الاستضافة المستقلة الافتراضية](product) [الباقة الاحترافية](hosting_package)",
+      "اريد معلومات عن خدمة [استضافة النطاق](product) [الاستضافة الافتراضية](hosting_package)",
+      "اريد قائمة بأسعار الباقات والاشتراكات لديكم",
+      "حابب [احجز نطاق](product) [لاتيني](hosting_package) بس ما بعرف شو الاسعار لهذه الخدمة عندكم",
+      "لو تزودني ببعض التفاصيل عن [الاستضافة المستقلة](product) [الباقة الاحترافية](hosting_package)",
+      "ما هي اسعار خدمات [الاستضافة المستقلة الافتراضية](product)",
+      "ا﻿عطني بعض المعلومات عن خدمة [حجز النطاق](product)",
+      "ه﻿ل يمكنك اعطائي بعض التفاصيل عن خدمات [الاستضافة المشتركة](product) [باقة التوفير](hosting_package)"
+    ]
+  },
+  "slots": [
+    {
+      "id": "8oau_y5SNUxYVWApL2q4Y",
+      "name": "product",
+      "entities": [
+        "product"
+      ],
+      "color": 1
+    },
+    {
+      "id": "TkFNtHxH9Aebodk3MgATK",
+      "name": "hosting_package",
+      "entities": [
+        "hosting_package"
+      ],
+      "color": 2
+    }
+  ],
+  "contexts": [
+    "global"
+  ]
+}

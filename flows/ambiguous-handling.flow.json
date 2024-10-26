@@ -1,0 +1,66 @@
+{
+  "version": "0.0.1",
+  "catchAll": {},
+  "startNode": "entry",
+  "nodes": [
+    {
+      "id": "17585d2c1f",
+      "name": "node-intent-update",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "main.flow.json#node-detect-intent"
+        }
+      ],
+      "onEnter": [
+        "ambiguous-nlu-update {\"utterance\":\"{{event.state.temp.pre_message}}\",\"intent\":\"{{event.state.temp.intent}}\"}",
+        "ambiguous-nlu-train {}"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "f4118e447c",
+      "name": "node-still-ambiguous",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "main.flow.json"
+        }
+      ],
+      "onEnter": [],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "321a839ff4",
+      "name": "entry",
+      "onEnter": [
+        "misunderstood/flag {}",
+        "ambiguous-handling {\"top\":\"{{event.nlu.intents.0.name}}\",\"low\":\"{{event.nlu.intents.1.name}}\"}"
+      ],
+      "onReceive": [
+        "ambiguous-correction {}"
+      ],
+      "next": [
+        {
+          "condition": "event.nlu.ambiguous",
+          "conditionType": "raw",
+          "node": "node-still-ambiguous"
+        },
+        {
+          "condition": "temp.intent",
+          "conditionType": "raw",
+          "node": "node-intent-update"
+        },
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "node-still-ambiguous"
+        }
+      ]
+    }
+  ]
+}

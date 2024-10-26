@@ -1,0 +1,13 @@
+[
+  {
+    "id": "builtin_image-TbN9Ml",
+    "formData": {
+      "typing$ar": true,
+      "image$ar": "/api/v1/bots/techagent/media/lymjpgby1mfux1mimwfg-51840037_2333444790000399_3995457884757426176_n.png",
+      "title$ar": "logo"
+    },
+    "createdBy": "admin",
+    "createdOn": "2021-01-29T19:00:33.680Z",
+    "modifiedOn": "2021-01-29T19:00:33.680Z"
+  }
+]

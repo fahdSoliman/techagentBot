@@ -1,0 +1,195 @@
+{
+  "version": "0.0.1",
+  "catchAll": {},
+  "startNode": "Slot-fields",
+  "description": "",
+  "nodes": [
+    {
+      "id": "skill-d60850",
+      "type": "skill-call",
+      "skill": "Slot",
+      "name": "Slot-fields",
+      "flow": "skills/Slot-d60850.flow.json",
+      "next": [
+        {
+          "caption": "On extracted",
+          "condition": "temp.extracted == \"true\"",
+          "node": "node-check"
+        },
+        {
+          "caption": "On not found",
+          "condition": "temp.notExtracted  == \"true\"",
+          "conditionType": "props",
+          "node": "flow-ask-agent.flow.json"
+        },
+        {
+          "caption": "On already extracted",
+          "condition": "temp.alreadyExtracted == \"true\"",
+          "node": "node-check"
+        }
+      ],
+      "onEnter": null,
+      "onReceive": null
+    },
+    {
+      "id": "0ebeb7768c",
+      "name": "node-check",
+      "next": [
+        {
+          "condition": "session.slots.fields.value === 'باقة'",
+          "conditionType": "raw",
+          "node": "node-backage-update"
+        },
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "node-catch-field"
+        }
+      ],
+      "onEnter": [],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "f7d962ee22",
+      "name": "node-catch-field",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "choice-update-more"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-sGDqNj"
+      ],
+      "onReceive": [
+        "ResDomain_fields_toUpdate {\"value\":\"{{event.preview}}\",\"jump\":\"node-exist\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "e6ed8cca09",
+      "name": "node-backage-update",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "choice-ask-agent"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-Nx0GSL",
+        "basic-skills/slot_reset {\"slotName\":\"fields\"}"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "skill-101700",
+      "type": "skill-call",
+      "skill": "choice",
+      "name": "choice-update-more",
+      "flow": "skills/choice-101700.flow.json",
+      "next": [
+        {
+          "caption": "User picked [0]",
+          "condition": "temp['skill-choice-ret-qjRfMtCY2K'] == \"0\"",
+          "node": "node-api-copy"
+        },
+        {
+          "caption": "User picked [1]",
+          "condition": "temp['skill-choice-ret-qjRfMtCY2K'] == \"1\"",
+          "node": "node-reset-slot"
+        },
+        {
+          "caption": "On failure",
+          "condition": "true",
+          "conditionType": "always",
+          "node": "flow-ask-agent.flow.json"
+        }
+      ],
+      "onEnter": null,
+      "onReceive": null
+    },
+    {
+      "id": "603dcf0771",
+      "name": "node-api-copy",
+      "onEnter": [
+        "test_fields {}",
+        "ResDomain_update_API {}",
+        "basic-skills/slot_reset {\"slotName\":\"domain\"}",
+        "basic-skills/slot_reset {\"slotName\":\"product\"}",
+        "basic-skills/slot_reset {\"slotName\":\"fields\"}"
+      ],
+      "onReceive": null,
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": ""
+        }
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "55777b7e2b",
+      "name": "node-reset-slot",
+      "next": [
+        {
+          "condition": "true",
+          "node": "Slot-fields"
+        }
+      ],
+      "onEnter": [
+        "basic-skills/slot_reset {\"slotName\":\"fields\"}"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "6c2f196261",
+      "name": "node-exist",
+      "next": [
+        {
+          "condition": "true",
+          "node": "node-reset-slot"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-hoPv7x"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "skill-f7bba8",
+      "type": "skill-call",
+      "skill": "choice",
+      "name": "choice-ask-agent",
+      "flow": "skills/choice-f7bba8.flow.json",
+      "next": [
+        {
+          "caption": "User picked [0]",
+          "condition": "temp['skill-choice-ret-qyoo9ez9ad'] == \"0\"",
+          "conditionType": "raw",
+          "node": "flow-end.flow.json"
+        },
+        {
+          "caption": "User picked [1]",
+          "condition": "temp['skill-choice-ret-qyoo9ez9ad'] == \"1\"",
+          "conditionType": "raw",
+          "node": "flow-ask-agent.flow.json"
+        },
+        {
+          "caption": "On failure",
+          "condition": "true",
+          "conditionType": "always",
+          "node": "flow-ask-agent.flow.json"
+        }
+      ],
+      "onEnter": null,
+      "onReceive": null
+    }
+  ]
+}

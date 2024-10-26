@@ -1,0 +1,146 @@
+{
+  "nodes": [
+    {
+      "id": "780343",
+      "position": {
+        "x": null,
+        "y": null
+      }
+    },
+    {
+      "id": "163302",
+      "position": {
+        "x": null,
+        "y": null
+      }
+    },
+    {
+      "id": "604977",
+      "position": {
+        "x": null,
+        "y": null
+      }
+    },
+    {
+      "id": "034041",
+      "position": {
+        "x": null,
+        "y": null
+      }
+    },
+    {
+      "id": "990061",
+      "position": {
+        "x": null,
+        "y": null
+      }
+    }
+  ],
+  "links": [
+    {
+      "source": "034041",
+      "sourcePort": "out1",
+      "target": "780343",
+      "points": [
+        {
+          "x": null,
+          "y": null
+        },
+        {
+          "x": null,
+          "y": null
+        }
+      ]
+    },
+    {
+      "source": "034041",
+      "sourcePort": "out0",
+      "target": "990061",
+      "points": [
+        {
+          "x": null,
+          "y": null
+        },
+        {
+          "x": null,
+          "y": null
+        }
+      ]
+    },
+    {
+      "source": "604977",
+      "sourcePort": "out0",
+      "target": "163302",
+      "points": [
+        {
+          "x": null,
+          "y": null
+        },
+        {
+          "x": null,
+          "y": null
+        }
+      ]
+    },
+    {
+      "source": "604977",
+      "sourcePort": "out2",
+      "target": "604977",
+      "points": [
+        {
+          "x": null,
+          "y": null
+        },
+        {
+          "x": null,
+          "y": null
+        }
+      ]
+    },
+    {
+      "source": "780343",
+      "sourcePort": "out0",
+      "target": "163302",
+      "points": [
+        {
+          "x": null,
+          "y": null
+        },
+        {
+          "x": null,
+          "y": null
+        }
+      ]
+    },
+    {
+      "source": "780343",
+      "sourcePort": "out1",
+      "target": "604977",
+      "points": [
+        {
+          "x": null,
+          "y": null
+        },
+        {
+          "x": null,
+          "y": null
+        }
+      ]
+    },
+    {
+      "source": "990061",
+      "sourcePort": "out1",
+      "target": "780343",
+      "points": [
+        {
+          "x": null,
+          "y": null
+        },
+        {
+          "x": null,
+          "y": null
+        }
+      ]
+    }
+  ]
+}

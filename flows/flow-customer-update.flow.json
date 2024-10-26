@@ -1,0 +1,151 @@
+{
+  "version": "0.0.1",
+  "catchAll": {
+    "onReceive": [],
+    "next": [
+      {
+        "condition": "event.nlu.intent.name === 'intent-cancel'",
+        "conditionType": "intent",
+        "node": "flow-end.flow.json"
+      }
+    ]
+  },
+  "startNode": "entry",
+  "description": "",
+  "nodes": [
+    {
+      "id": "0f4364d6ea",
+      "name": "entry",
+      "onEnter": [
+        "say #!builtin_text-w_uG25"
+      ],
+      "onReceive": null,
+      "next": [
+        {
+          "condition": "true",
+          "node": "choice-continue-break"
+        }
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "skill-9896eb",
+      "type": "skill-call",
+      "skill": "choice",
+      "name": "choice-continue-break",
+      "flow": "skills/choice-9896eb.flow.json",
+      "next": [
+        {
+          "caption": "User picked [0]",
+          "condition": "temp['skill-choice-ret-FWq_WVvqWM'] == \"0\"",
+          "node": "node-break"
+        },
+        {
+          "caption": "User picked [1]",
+          "condition": "temp['skill-choice-ret-FWq_WVvqWM'] == \"1\"",
+          "node": "node-continue"
+        },
+        {
+          "caption": "On failure",
+          "condition": "true",
+          "node": "node-break"
+        }
+      ],
+      "onEnter": null,
+      "onReceive": null
+    },
+    {
+      "id": "94185d9a4b",
+      "name": "node-break",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "END"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-0oG0Ce"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "5a7062a95b",
+      "name": "node-continue",
+      "next": [
+        {
+          "condition": "session.company === 'true'",
+          "conditionType": "raw",
+          "node": "flow-customer-company-update.flow.json"
+        },
+        {
+          "condition": "session.tech === 'true'",
+          "conditionType": "raw",
+          "node": "flow-customer-tech-update.flow.json"
+        },
+        {
+          "condition": "session.fin === 'true'",
+          "conditionType": "raw",
+          "node": "flow-customer-finan-update.flow.json"
+        },
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "choice-gender"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-yH69YK",
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"company\",\"value\":\"true\"}",
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"tech\",\"value\":\"true\"}",
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"fin\",\"value\":\"true\"}"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "0aad4de7e3",
+      "name": "node-profile-complete",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "END"
+        }
+      ],
+      "onEnter": [
+        "customer_profile_update_API {}",
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"is_complete\",\"value\":\"true\"}"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "skill-d66db5",
+      "type": "skill-call",
+      "skill": "choice",
+      "name": "choice-gender",
+      "flow": "skills/choice-d66db5.flow.json",
+      "next": [
+        {
+          "caption": "User picked [male]",
+          "condition": "temp['skill-choice-ret-gender'] == \"male\"",
+          "node": "node-profile-complete"
+        },
+        {
+          "caption": "User picked [female]",
+          "condition": "temp['skill-choice-ret-gender'] == \"female\"",
+          "node": "node-profile-complete"
+        },
+        {
+          "caption": "On failure",
+          "condition": "true",
+          "node": ""
+        }
+      ],
+      "onEnter": null,
+      "onReceive": null
+    }
+  ]
+}

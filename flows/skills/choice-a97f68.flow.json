@@ -1,0 +1,100 @@
+{
+  "version": "0.0.1",
+  "catchAll": {
+    "next": []
+  },
+  "startNode": "entry",
+  "skillData": {
+    "randomId": "3rrjylvf0q",
+    "contentId": "builtin_single-choice-5ea-iQ",
+    "invalidContentId": "",
+    "keywords": {
+      "0": [
+        "0",
+        "لا، سأقوم بتحديث البيانات لاحقاً من صفحة تحديث البيانات."
+      ],
+      "1": [
+        "1",
+        "نعم، سأقوم بتزويدك بالبيانات لحفظها في الحساب."
+      ]
+    },
+    "config": {
+      "nbMaxRetries": 3,
+      "repeatChoicesOnInvalid": false,
+      "variableName": ""
+    }
+  },
+  "nodes": [
+    {
+      "name": "entry",
+      "onEnter": [
+        "builtin/setVariable {\"type\":\"temp\",\"name\":\"skill-choice-invalid-count-3rrjylvf0q\",\"value\": 0}",
+        "builtin/setVariable {\"type\":\"temp\",\"name\":\"skill-choice-valid-3rrjylvf0q\",\"value\": null}",
+        "builtin/setVariable {\"type\":\"temp\",\"name\":\"skill-choice-ret-3rrjylvf0q\",\"value\": null}",
+        "say #!builtin_single-choice-5ea-iQ {\"skill\":\"choice\"}"
+      ],
+      "next": [
+        {
+          "condition": "true",
+          "node": "parse"
+        }
+      ],
+      "id": "370827"
+    },
+    {
+      "name": "parse",
+      "onReceive": [
+        "basic-skills/choice_parse_answer {\"randomId\":\"3rrjylvf0q\",\"contentId\":\"builtin_single-choice-5ea-iQ\",\"invalidContentId\":\"\",\"keywords\":{\"0\":[\"0\",\"لا، سأقوم بتحديث البيانات لاحقاً من صفحة تحديث البيانات.\"],\"1\":[\"1\",\"نعم، سأقوم بتزويدك بالبيانات لحفظها في الحساب.\"]},\"config\":{\"nbMaxRetries\":3,\"repeatChoicesOnInvalid\":false,\"variableName\":\"\"}}"
+      ],
+      "next": [
+        {
+          "condition": "temp['skill-choice-valid-3rrjylvf0q'] === true",
+          "node": "#"
+        },
+        {
+          "condition": "true",
+          "node": "invalid"
+        }
+      ],
+      "triggers": [
+        {
+          "conditions": [
+            {
+              "id": "always"
+            }
+          ]
+        }
+      ],
+      "onEnter": [],
+      "id": "675396"
+    },
+    {
+      "name": "invalid",
+      "onEnter": [
+        "basic-skills/choice_invalid_answer {\"randomId\":\"3rrjylvf0q\"}"
+      ],
+      "next": [
+        {
+          "condition": "Number(temp['skill-choice-invalid-count-3rrjylvf0q']) > Number(3)",
+          "node": "#"
+        },
+        {
+          "condition": "true",
+          "node": "sorry"
+        }
+      ],
+      "id": "447349"
+    },
+    {
+      "name": "sorry",
+      "onEnter": [],
+      "next": [
+        {
+          "condition": "true",
+          "node": "parse"
+        }
+      ],
+      "id": "080325"
+    }
+  ]
+}

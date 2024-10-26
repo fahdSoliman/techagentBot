@@ -1,0 +1,47 @@
+{
+  "name": "intent-product-register",
+  "utterances": {
+    "ar": [
+      "اريد الاشتراك في [الاستضافة المشتركة](product) [باقة توفير](hosting_package)",
+      "بحاجة إلى حجز [سيرفر مستقل](product) على مخدماتكم.",
+      "لدي مشروع خاص واحتاج الاشتراك في خدمة [الاستضافة المشتركة](product)",
+      "أرغب في [حجز عنوان](product) نطاق لموقعي الإلكتروني التجاري",
+      "مشروعي يتطلب اشتراك [استضافة مشتركة](product) [باقة احترافية](hosting_package)",
+      "أعمل على تطبيق وبحاجة [استضافة مشتركة](product) لأرفع مشروعي على الانترنت",
+      "أرغب في [حجز عنوان](product) النطاق [domainname.com](domain) لمشروعي.",
+      "اريد [سيرفر VPS](product) لمشروعي الخاص هل يمكنك حجز سيرفر",
+      "بدي اشترك بخدمة [سيرفر مستقل](product)",
+      "ارغب بالاشتراك بخدمة [حجز النطاق](product)",
+      "م﻿وقعي الذي قمت بتصميمه بحاجة الى [استضافة نطاق](product) واريد الاشتراك [باستضافة افتراضية للنطاق](hosting_package)"
+    ]
+  },
+  "slots": [
+    {
+      "id": "F1zznLCWUIRrTWLOs98Jb",
+      "name": "product",
+      "entities": [
+        "product"
+      ],
+      "color": 1
+    },
+    {
+      "id": "Un6akZaR8TfXeIB69r1z3",
+      "name": "hosting_package",
+      "entities": [
+        "hosting_package"
+      ],
+      "color": 2
+    },
+    {
+      "id": "gM28ECMWMW1JP4FAvEZsa",
+      "name": "domain",
+      "entities": [
+        "url"
+      ],
+      "color": 3
+    }
+  ],
+  "contexts": [
+    "global"
+  ]
+}

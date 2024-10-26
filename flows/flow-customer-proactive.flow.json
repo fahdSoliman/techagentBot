@@ -1,0 +1,195 @@
+{
+  "version": "0.0.1",
+  "catchAll": {},
+  "startNode": "entry",
+  "description": "",
+  "nodes": [
+    {
+      "id": "9686a989c5",
+      "name": "entry",
+      "onEnter": [
+        "test {}",
+        "customer_reservations_API {}",
+        "customer_proactive {}"
+      ],
+      "onReceive": null,
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "choice-main-menu"
+        }
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "skill-4b173b",
+      "type": "skill-call",
+      "skill": "choice",
+      "name": "choice-main-menu",
+      "flow": "skills/choice-4b173b.flow.json",
+      "next": [
+        {
+          "caption": "User picked [0]",
+          "condition": "temp['skill-choice-ret-bbh9iq1144'] == \"0\"",
+          "node": "node-check-reservations"
+        },
+        {
+          "caption": "User picked [1]",
+          "condition": "temp['skill-choice-ret-bbh9iq1144'] == \"1\"",
+          "node": "node-check-profile"
+        },
+        {
+          "caption": "User picked [2]",
+          "condition": "temp['skill-choice-ret-bbh9iq1144'] == \"2\"",
+          "node": "flow-customer-update.flow.json"
+        },
+        {
+          "caption": "User picked [3]",
+          "condition": "temp['skill-choice-ret-bbh9iq1144'] == \"3\"",
+          "conditionType": "raw",
+          "node": "flow-ask-agent.flow.json"
+        },
+        {
+          "caption": "User picked [9]",
+          "condition": "temp['skill-choice-ret-bbh9iq1144'] == \"9\"",
+          "node": "node-end-copy"
+        },
+        {
+          "caption": "On failure",
+          "condition": "true",
+          "node": "node-failure"
+        }
+      ],
+      "onEnter": null,
+      "onReceive": null
+    },
+    {
+      "id": "4ce58743ad",
+      "name": "node-check-reservations",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "choice-5b1d26"
+        }
+      ],
+      "onEnter": [
+        "customer_check_reservations {}"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "a1de2fe118",
+      "name": "node-check-profile",
+      "next": [
+        {
+          "condition": "session.is_complete",
+          "conditionType": "raw",
+          "node": "node-51b4"
+        },
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "flow-customer-authentication.flow.json"
+        }
+      ],
+      "onEnter": [],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "a3ee4edb16",
+      "name": "node-failure",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "END"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-qTwqMn"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "0a2e504ee6",
+      "name": "node-end-copy",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "END"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-Wqxr-E"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "skill-5b1d26",
+      "type": "skill-call",
+      "skill": "choice",
+      "name": "choice-5b1d26",
+      "flow": "skills/choice-5b1d26.flow.json",
+      "next": [
+        {
+          "caption": "User picked [0]",
+          "condition": "temp['skill-choice-ret-8m7yrxf3np'] == \"0\"",
+          "conditionType": "raw",
+          "node": "node-4072"
+        },
+        {
+          "caption": "User picked [1]",
+          "condition": "temp['skill-choice-ret-8m7yrxf3np'] == \"1\"",
+          "node": "choice-main-menu"
+        },
+        {
+          "caption": "On failure",
+          "condition": "true",
+          "conditionType": "always",
+          "node": "END"
+        }
+      ],
+      "onEnter": null,
+      "onReceive": null
+    },
+    {
+      "id": "bb639080e4",
+      "name": "node-51b4",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "END"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-cNNW9i"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "5bbfa62874",
+      "name": "node-4072",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "END"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-Wqxr-E"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    }
+  ]
+}

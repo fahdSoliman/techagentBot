@@ -1,0 +1,112 @@
+{
+  "version": "0.0.1",
+  "catchAll": {
+    "next": []
+  },
+  "startNode": "entry",
+  "skillData": {
+    "randomId": "znxfgsppbc",
+    "contentId": "builtin_single-choice-bYaha8",
+    "invalidContentId": "builtin_text-Oyj6ZW",
+    "keywords": {
+      "1": [
+        "1",
+        "ماذا استطيع أن قدم لك"
+      ],
+      "2": [
+        "2",
+        "الاستعلام عن الخدمات"
+      ],
+      "3": [
+        "3",
+        "التواصل مع موظف",
+        "التواصل مع عميل"
+      ],
+      "9": [
+        "9",
+        "خروج"
+      ]
+    },
+    "config": {
+      "nbMaxRetries": 2,
+      "repeatChoicesOnInvalid": true,
+      "variableName": ""
+    }
+  },
+  "nodes": [
+    {
+      "name": "entry",
+      "onEnter": [
+        "builtin/setVariable {\"type\":\"temp\",\"name\":\"skill-choice-invalid-count-znxfgsppbc\",\"value\": 0}",
+        "builtin/setVariable {\"type\":\"temp\",\"name\":\"skill-choice-valid-znxfgsppbc\",\"value\": null}",
+        "builtin/setVariable {\"type\":\"temp\",\"name\":\"skill-choice-ret-znxfgsppbc\",\"value\": null}",
+        "say #!builtin_single-choice-bYaha8 {\"skill\":\"choice\"}"
+      ],
+      "next": [
+        {
+          "condition": "true",
+          "node": "parse"
+        }
+      ],
+      "id": "226562"
+    },
+    {
+      "name": "parse",
+      "onReceive": [
+        "basic-skills/choice_parse_answer {\"randomId\":\"znxfgsppbc\",\"contentId\":\"builtin_single-choice-bYaha8\",\"invalidContentId\":\"builtin_text-Oyj6ZW\",\"keywords\":{\"1\":[\"1\",\"ماذا استطيع أن قدم لك\"],\"2\":[\"2\",\"الاستعلام عن الخدمات\"],\"3\":[\"3\",\"التواصل مع موظف\",\"التواصل مع عميل\"],\"9\":[\"9\",\"خروج\"]},\"config\":{\"nbMaxRetries\":2,\"repeatChoicesOnInvalid\":true,\"variableName\":\"\"}}"
+      ],
+      "next": [
+        {
+          "condition": "temp['skill-choice-valid-znxfgsppbc'] === true",
+          "node": "#"
+        },
+        {
+          "condition": "true",
+          "node": "invalid"
+        }
+      ],
+      "triggers": [
+        {
+          "conditions": [
+            {
+              "id": "always"
+            }
+          ]
+        }
+      ],
+      "onEnter": [],
+      "id": "306622"
+    },
+    {
+      "name": "invalid",
+      "onEnter": [
+        "basic-skills/choice_invalid_answer {\"randomId\":\"znxfgsppbc\"}"
+      ],
+      "next": [
+        {
+          "condition": "Number(temp['skill-choice-invalid-count-znxfgsppbc']) > Number(2)",
+          "node": "#"
+        },
+        {
+          "condition": "true",
+          "node": "sorry"
+        }
+      ],
+      "id": "531164"
+    },
+    {
+      "name": "sorry",
+      "onEnter": [
+        "say #!builtin_text-Oyj6ZW {}",
+        "say #!builtin_single-choice-bYaha8 {\"skill\":\"choice\"}"
+      ],
+      "next": [
+        {
+          "condition": "true",
+          "node": "parse"
+        }
+      ],
+      "id": "380084"
+    }
+  ]
+}

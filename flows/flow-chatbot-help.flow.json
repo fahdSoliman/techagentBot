@@ -1,0 +1,168 @@
+{
+  "version": "0.0.1",
+  "catchAll": {
+    "onReceive": [],
+    "next": []
+  },
+  "startNode": "node-start",
+  "description": "",
+  "nodes": [
+    {
+      "id": "0b272e3eb0",
+      "name": "entry",
+      "onEnter": [
+        "say #!builtin_text-tXsl8x",
+        "test {}"
+      ],
+      "onReceive": null,
+      "next": [
+        {
+          "condition": "user.userid  === undefined",
+          "conditionType": "props",
+          "node": "choice-main-menu"
+        },
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "flow-customer-proactive.flow.json"
+        }
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "skill-58f3ee",
+      "type": "skill-call",
+      "skill": "choice",
+      "name": "choice-main-menu",
+      "flow": "skills/choice-58f3ee.flow.json",
+      "next": [
+        {
+          "caption": "User picked [1]",
+          "condition": "temp['skill-choice-ret-znxfgsppbc'] == \"1\"",
+          "node": "node-what-bot-can-do"
+        },
+        {
+          "caption": "User picked [2]",
+          "condition": "temp['skill-choice-ret-znxfgsppbc'] == \"2\"",
+          "conditionType": "raw",
+          "node": "flow-product-info.flow.json"
+        },
+        {
+          "caption": "User picked [3]",
+          "condition": "temp['skill-choice-ret-znxfgsppbc'] == \"3\"",
+          "node": "node-agent"
+        },
+        {
+          "caption": "User picked [9]",
+          "condition": "temp['skill-choice-ret-znxfgsppbc'] == \"9\"",
+          "node": "node-end"
+        },
+        {
+          "caption": "On failure",
+          "condition": "true",
+          "node": "node-failure"
+        }
+      ],
+      "onEnter": null,
+      "onReceive": null
+    },
+    {
+      "id": "601e97755d",
+      "name": "node-end",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "END"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-Wqxr-E"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "7287ed2317",
+      "name": "node-agent",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "flow-ask-agent.flow.json"
+        }
+      ],
+      "onEnter": [],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "505474f827",
+      "name": "node-what-bot-can-do",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "END"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-NQ_Dze",
+        "say #!builtin_text-1ER0Iw"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "deaf13e1f8",
+      "name": "node-failure",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "END"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-qTwqMn"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "17455d6ae2",
+      "name": "node-start",
+      "next": [
+        {
+          "condition": "session.isGreet === 'true'",
+          "conditionType": "props",
+          "node": "entry"
+        },
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "node-Greet"
+        }
+      ],
+      "onEnter": [],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "e1c60fd9d3",
+      "name": "node-Greet",
+      "next": [
+        {
+          "condition": "true",
+          "node": "entry"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-Rl_PpZ",
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"isGreet\",\"value\":\"true\"}"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    }
+  ]
+}

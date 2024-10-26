@@ -1,0 +1,68 @@
+{
+  "version": "0.0.1",
+  "catchAll": {},
+  "startNode": "entry",
+  "description": "",
+  "nodes": [
+    {
+      "id": "5203f3a525",
+      "name": "node-getUser-information",
+      "next": [
+        {
+          "condition": "user.userid  !== undefined",
+          "conditionType": "raw",
+          "node": "main.flow.json#node-knowledge-bart"
+        },
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "node-new-conversation"
+        }
+      ],
+      "onEnter": [
+        "telegram_info {}",
+        "customer_telegram_API {}",
+        "test {}"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "fe69a6d007",
+      "name": "node-new-conversation",
+      "next": [
+        {
+          "condition": "session.lastMessages.length",
+          "conditionType": "raw",
+          "node": "main.flow.json#node-knowledge-bart"
+        },
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "flow-customer-authentication.flow.json"
+        }
+      ],
+      "onEnter": [],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "60c959123a",
+      "name": "entry",
+      "next": [
+        {
+          "condition": "true",
+          "node": "node-getUser-information"
+        },
+        {
+          "condition": "session.lastMessages.length",
+          "conditionType": "raw",
+          "node": "main.flow.json#node-knowledge-bart"
+        }
+      ],
+      "onEnter": [],
+      "onReceive": null,
+      "type": "standard"
+    }
+  ]
+}
